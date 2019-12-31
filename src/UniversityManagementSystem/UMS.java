@@ -16,7 +16,7 @@ public class UMS {
      */
     public static void main(String[] args) {
         databaseConnection databaseconnection = new databaseConnection();
-        databaseconnection.connection();
+        databaseConnection.connection();
     }
     
 }
