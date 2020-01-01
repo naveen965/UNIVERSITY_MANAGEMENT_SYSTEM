@@ -27,7 +27,8 @@ public class Login extends javax.swing.JFrame {
     
     public Login() {
         super("Login");
-        initComponents();     
+        initComponents(); 
+        conn = databaseConnection.connection();
     }
 
     /**
