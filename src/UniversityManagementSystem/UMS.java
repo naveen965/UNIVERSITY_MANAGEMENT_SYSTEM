@@ -18,6 +18,7 @@ public class UMS {
         databaseConnection databaseconnection = new databaseConnection();
         databaseConnection.connection();
         Login lg= new Login();
+        lg.setVisible(true);
 //        lg.loginActionPerformed(java.awt.event.ActionEvent evt);
     }
     

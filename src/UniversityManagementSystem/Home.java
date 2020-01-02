@@ -71,6 +71,11 @@ public class Home extends javax.swing.JFrame {
         });
 
         jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\showStudent.png")); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -252,6 +257,12 @@ public class Home extends javax.swing.JFrame {
         Login object = new Login();
         object.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        setVisible(false);
+        ShowScholer object = new ShowScholer();
+        object.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
