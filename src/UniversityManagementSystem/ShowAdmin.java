@@ -35,7 +35,7 @@ public class ShowAdmin extends javax.swing.JFrame {
     public void showRecord(){
         try{
             stmt = conn.createStatement();
-            String sql = "SELECT * FROM scholer";
+            String sql = "SELECT * FROM admin";
             ResultSet res = stmt.executeQuery(sql);
             jTable1.setModel(DbUtils.resultSetToTableModel(res));
         }

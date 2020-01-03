@@ -97,10 +97,20 @@ public class Home extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\logo.png")); // NOI18N
 
         jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\showAdmin.png")); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\configuration1.png")); // NOI18N
 
         jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\addAdmin.png")); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -274,6 +284,18 @@ public class Home extends javax.swing.JFrame {
         Scholer object = new Scholer();
         object.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        setVisible(false);
+        AddAdmin object = new AddAdmin();
+        object.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        setVisible(false);
+        ShowAdmin object = new ShowAdmin();
+        object.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
