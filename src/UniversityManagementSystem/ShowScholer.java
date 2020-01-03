@@ -85,6 +85,11 @@ public class ShowScholer extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\back.png")); // NOI18N
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,6 +182,12 @@ public class ShowScholer extends javax.swing.JFrame {
         About object = new About();
         object.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        setVisible(false);
+        Home object = new Home();
+        object.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
