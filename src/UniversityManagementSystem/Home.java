@@ -104,6 +104,11 @@ public class Home extends javax.swing.JFrame {
         });
 
         jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\configuration1.png")); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\addAdmin.png")); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -296,6 +301,12 @@ public class Home extends javax.swing.JFrame {
         ShowAdmin object = new ShowAdmin();
         object.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        setVisible(false);
+        Admin object = new Admin();
+        object.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
