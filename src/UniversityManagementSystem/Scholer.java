@@ -5,8 +5,10 @@
  */
 package UniversityManagementSystem;
 
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
@@ -49,10 +51,10 @@ public class Scholer extends javax.swing.JFrame {
         fatherName = new javax.swing.JTextField();
         city = new javax.swing.JTextField();
         phone = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        update = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        search = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
         blood = new javax.swing.JTextField();
         id = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -64,6 +66,7 @@ public class Scholer extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Scholer", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -112,11 +115,11 @@ public class Scholer extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\submit.png")); // NOI18N
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        update.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\submit.png")); // NOI18N
+        update.setText("Update");
+        update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                updateActionPerformed(evt);
             }
         });
 
@@ -128,16 +131,21 @@ public class Scholer extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\loupe.png")); // NOI18N
-        jButton3.setText("Search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        search.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\loupe.png")); // NOI18N
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                searchActionPerformed(evt);
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\cancel1.png")); // NOI18N
-        jButton4.setText("Delete");
+        delete.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\cancel1.png")); // NOI18N
+        delete.setText("Delete");
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
 
         blood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,16 +184,16 @@ public class Scholer extends javax.swing.JFrame {
                                     .addComponent(name)
                                     .addComponent(id))
                                 .addGap(30, 30, 30)
-                                .addComponent(jButton3))
+                                .addComponent(search))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(phone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
                                 .addComponent(blood, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(city, javax.swing.GroupLayout.Alignment.LEADING))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(86, 86, 86)
-                        .addComponent(jButton1)
+                        .addComponent(update)
                         .addGap(61, 61, 61)
-                        .addComponent(jButton4)
+                        .addComponent(delete)
                         .addGap(63, 63, 63)
                         .addComponent(jButton2))
                     .addComponent(jLabel5)
@@ -203,7 +211,7 @@ public class Scholer extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(search))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -222,10 +230,10 @@ public class Scholer extends javax.swing.JFrame {
                     .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(update)
                     .addComponent(jButton2)
-                    .addComponent(jButton4))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(delete))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -276,10 +284,13 @@ public class Scholer extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        pack();
+        setSize(new java.awt.Dimension(789, 610));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -316,23 +327,24 @@ public class Scholer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try{
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+        try{            
             stmt = conn.createStatement();
+            int scholerId = Integer.parseInt(id.getText());
             String scholerName = name.getText();
             String scholerBlood = blood.getText();
             String scholerFather = fatherName.getText();
             String scholerCity = city.getText();
             String scholerPhone = phone.getText();
 
-            String sql = "INSERT INTO scholer(scholerName, scholerFatherName, scholerBlood, scholerPhone, scholerCity) VALUES('"+scholerName+"', '"+scholerFather+"', '"+scholerBlood+"', '"+scholerPhone+"', '"+scholerCity+"')";
+            String sql = "UPDATE scholer SET scholerName = '"+scholerName+"', scholerFatherName = '"+scholerFather+"', scholerBlood = '"+scholerBlood+"', scholerPhone = '"+scholerPhone+"', scholerCity = '"+scholerCity+"' WHERE id = '"+scholerId+"' ";
             stmt.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, "Data is Successfully Inserted");
+            JOptionPane.showMessageDialog(null, "Data is Successfully Updated");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_updateActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);
@@ -340,16 +352,31 @@ public class Scholer extends javax.swing.JFrame {
         object.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         try{
             stmt = conn.createStatement();
             
             int scholerId = Integer.parseInt(id.getText());
+            
+            String sql = "SELECT * FROM scholer WHERE id = '"+scholerId+"' ";
+            
+            rs = stmt.executeQuery(sql);
+            
+            if(rs.next()){
+                name.setText(rs.getString("scholerName"));
+                fatherName.setText(rs.getString("scholerFatherName"));
+                city.setText(rs.getString("scholerCity"));
+                blood.setText(rs.getString("scholerBlood"));
+                phone.setText(rs.getString("scholerPhone"));
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Record Not Found");
+            }
         }
-        catch(Exception e){
+        catch(HeadlessException | NumberFormatException | SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_searchActionPerformed
 
     private void bloodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloodActionPerformed
         // TODO add your handling code here:
@@ -358,6 +385,27 @@ public class Scholer extends javax.swing.JFrame {
     private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_idActionPerformed
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        try{
+            stmt = conn.createStatement();
+            
+            int scholerId = Integer.parseInt(id.getText());
+            
+            String sql = "DELETE FROM scholer WHERE id = '"+scholerId+"' ";
+            
+            stmt.executeUpdate(sql);
+            
+            setVisible(false);
+            Home object = new Home();
+            object.setVisible(true);
+            
+            
+        }
+        catch(HeadlessException | NumberFormatException | SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_deleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -397,12 +445,10 @@ public class Scholer extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField blood;
     private javax.swing.JTextField city;
+    private javax.swing.JButton delete;
     private javax.swing.JTextField fatherName;
     private javax.swing.JTextField id;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -418,5 +464,7 @@ public class Scholer extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField name;
     private javax.swing.JTextField phone;
+    private javax.swing.JButton search;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

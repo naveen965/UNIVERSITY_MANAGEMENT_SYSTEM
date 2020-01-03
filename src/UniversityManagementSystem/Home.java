@@ -62,6 +62,11 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\configuration.png")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\AddStudent.png")); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +228,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,6 +268,12 @@ public class Home extends javax.swing.JFrame {
         ShowScholer object = new ShowScholer();
         object.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        setVisible(false);
+        Scholer object = new Scholer();
+        object.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
