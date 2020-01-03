@@ -397,7 +397,7 @@ public class Scholer extends javax.swing.JFrame {
             stmt.executeUpdate(sql);
             
             setVisible(false);
-            Home object = new Home();
+            ShowScholer object = new ShowScholer();
             object.setVisible(true);
             
             
