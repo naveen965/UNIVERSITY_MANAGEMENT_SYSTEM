@@ -151,7 +151,7 @@ public class Admin extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
-                            .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                            .addComponent(password)
                             .addComponent(name))))
                 .addGap(27, 27, 27)
                 .addComponent(search)
@@ -300,6 +300,10 @@ public class Admin extends javax.swing.JFrame {
             String sql = "UPDATE admin SET name = '"+adminName+"', mail = '"+adminMail+"', password = '"+adminPassword+"' WHERE id = '"+adminId+"' ";
             stmt.executeUpdate(sql);
             JOptionPane.showMessageDialog(null, "Data is Successfully Updated");
+            
+            setVisible(false);
+            ShowAdmin object = new ShowAdmin();
+            object.setVisible(true);
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
