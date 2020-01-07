@@ -15,7 +15,7 @@
                   <KeyStroke key="Ctrl+A"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\DELL\Desktop\project Image\home.png"/>
+                  <Image iconType="3" name="/Images/home.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Home"/>
               </Properties>
@@ -29,7 +29,7 @@
                   <KeyStroke key="Ctrl+L"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\DELL\Desktop\project Image\logout.png"/>
+                  <Image iconType="3" name="/Images/logout.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Logout"/>
               </Properties>
@@ -43,7 +43,7 @@
                   <KeyStroke key="Ctrl+X"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\DELL\Desktop\project Image\cancel1.png"/>
+                  <Image iconType="3" name="/Images/Exit2.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
@@ -64,7 +64,7 @@
                   <KeyStroke key="Ctrl+S"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\DELL\Desktop\project Image\about.png"/>
+                  <Image iconType="3" name="/Images/about.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="About"/>
               </Properties>
@@ -178,7 +178,7 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\DELL\Desktop\project Image\back.png"/>
+              <Image iconType="3" name="/Images/back.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Back"/>
           </Properties>
@@ -189,7 +189,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\DELL\Desktop\project Image\ep.png"/>
+              <Image iconType="3" name="/Images/ep.png"/>
             </Property>
           </Properties>
         </Component>

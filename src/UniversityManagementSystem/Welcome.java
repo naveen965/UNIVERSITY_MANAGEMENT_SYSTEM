@@ -1,10 +1,9 @@
-package UniversityManagementSystem;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package UniversityManagementSystem;
 
 /**
  *
@@ -28,44 +27,17 @@ public class Welcome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setLayout(null);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\Kelaniya-Logo.png")); // NOI18N
-        jLabel2.setText("Welcome");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(190, 50, 590, 190);
-
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Desktop\\project Image\\loginicon.png")); // NOI18N
-        jButton1.setText("Sign in");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(260, 375, 140, 50);
-
-        jButton2.setText("Sign up");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(540, 400, 75, 25);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DELL\\Pictures\\Saved Pictures\\toyota_supra_sports_car-wide.jpg")); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 1000, 670);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -107,10 +79,5 @@ public class Welcome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
