@@ -8,6 +8,7 @@ package UniversityManagementSystem;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -114,7 +115,7 @@ public class AddAdmin extends javax.swing.JFrame {
                 .addComponent(submit)
                 .addGap(69, 69, 69)
                 .addComponent(back)
-                .addGap(187, 187, 187))
+                .addGap(170, 170, 170))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
