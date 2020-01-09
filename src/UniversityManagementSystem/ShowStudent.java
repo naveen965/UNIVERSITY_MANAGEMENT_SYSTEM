@@ -15,18 +15,18 @@ import net.proteanit.sql.DbUtils;
  *
  * @author Naveen Rajasekara
  */
-public class ShowScholer extends javax.swing.JFrame {
+public class ShowStudent extends javax.swing.JFrame {
 
     /**
-     * Creates new form ShowScholer
+     * Creates new form ShowStudent
      */
     
     Connection conn = null;
     Statement stmt = null;
     ResultSet rs = null;
     
-    public ShowScholer() {
-        super("Scholer");
+    public ShowStudent() {
+        super("Student");
         initComponents();
         conn = databaseConnection.connection();
         showRecord();
@@ -35,7 +35,7 @@ public class ShowScholer extends javax.swing.JFrame {
     public void showRecord(){
         try{
             stmt = conn.createStatement();
-            String sql = "SELECT * FROM scholer";
+            String sql = "SELECT * FROM student";
             ResultSet res = stmt.executeQuery(sql);
             jTable1.setModel(DbUtils.resultSetToTableModel(res));
         }
@@ -220,20 +220,21 @@ public class ShowScholer extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ShowScholer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ShowStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ShowScholer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ShowStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ShowScholer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ShowStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ShowScholer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ShowStudent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ShowScholer().setVisible(true);
+                new ShowStudent().setVisible(true);
             }
         });
     }

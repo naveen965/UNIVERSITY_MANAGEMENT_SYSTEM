@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UniversityManagementSystem;
+package UniversityManagementSystem.Admin;
 
+import UniversityManagementSystem.About;
+import UniversityManagementSystem.Home;
+import UniversityManagementSystem.Login;
+import UniversityManagementSystem.ShowStudent;
+import UniversityManagementSystem.databaseConnection;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -388,7 +393,7 @@ public class Scholer extends javax.swing.JFrame {
             stmt.executeUpdate(sql);
             
             setVisible(false);
-            ShowScholer object = new ShowScholer();
+            ShowStudent object = new ShowStudent();
             object.setVisible(true);
             
             

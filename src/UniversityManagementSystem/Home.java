@@ -296,7 +296,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);
-        AddScholer object = new AddScholer();
+        AddStudent object = new AddStudent();
         object.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -314,13 +314,13 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         setVisible(false);
-        ShowScholer object = new ShowScholer();
+        ShowStudent object = new ShowStudent();
         object.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         setVisible(false);
-        Scholer object = new Scholer();
+        Student object = new Student();
         object.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
