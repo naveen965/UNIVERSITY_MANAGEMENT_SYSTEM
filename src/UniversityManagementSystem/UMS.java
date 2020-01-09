@@ -17,7 +17,7 @@ public class UMS {
     public static void main(String[] args) {
         databaseConnection databaseconnection = new databaseConnection();
         databaseConnection.connection();
-        Welcome welcome= new Welcome();
+        Main welcome= new Main();
         welcome.setVisible(true);
 //        lg.loginActionPerformed(java.awt.event.ActionEvent evt);
     }
