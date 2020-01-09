@@ -53,6 +53,7 @@ public class SignUp extends javax.swing.JFrame {
         name = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "SignUp", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -163,7 +164,8 @@ public class SignUp extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(924, 719));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
@@ -174,16 +176,18 @@ public class SignUp extends javax.swing.JFrame {
             String userEmail = email.getText();
             String userPass = password.getText();
 
-            String sql = "INSERT INTO admin (name, mail, password) VALUES ('"+userName+"', '"+userEmail+"', '"+userPass+"');";
+            String sql = "INSERT INTO `admin` (`id`, `name`, `mail`, `password`) VALUES (NULL, '"+userName+"', '"+userEmail+"', '"+userPass+"')";
 
-            rs = stmt.executeQuery(sql);
-            if(rs.next()){
+            int result = stmt.executeUpdate(sql);
+            //System.out.println(result);
+            if(result == 1){
+                JOptionPane.showMessageDialog(null, "Registration Succeed");
                 setVisible(false);
                 Home object = new Home();
                 object.setVisible(true);
             }
             else{
-                JOptionPane.showMessageDialog(null, "Registration Succeed");
+                JOptionPane.showMessageDialog(null, "Registration Unsuccessful");
             }
         }
         catch(HeadlessException | SQLException e){
