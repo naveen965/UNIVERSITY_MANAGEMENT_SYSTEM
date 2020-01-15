@@ -154,6 +154,8 @@ public class Main extends javax.swing.JFrame {
     private void signUpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseEntered
         ImageIcon II = new ImageIcon(getClass().getResource("/Images/signup-default.png"));
         signUp.setIcon(II);
+        ImageIcon II1 = new ImageIcon(getClass().getResource("/Images/sign.png"));
+        jLabel2.setIcon(II1);
     }//GEN-LAST:event_signUpMouseEntered
 
     private void signUpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseExited
@@ -179,6 +181,8 @@ public class Main extends javax.swing.JFrame {
     private void signinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseEntered
         ImageIcon II = new ImageIcon(getClass().getResource("/Images/signin-default.png"));
         signin.setIcon(II);
+        ImageIcon II1 = new ImageIcon(getClass().getResource("/Images/log.png"));
+        jLabel3.setIcon(II1);
     }//GEN-LAST:event_signinMouseEntered
 
     private void signinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseExited
