@@ -177,7 +177,7 @@ public class StudentHome extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);
-        AddStudent object = new AddStudent();
+        StudentEnrolment object = new StudentEnrolment();
         object.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
