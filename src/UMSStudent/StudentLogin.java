@@ -3,7 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UniversityManagementSystem;
+package UMSStudent;
+
+import UniversityManagementSystem.Home;
+import UniversityManagementSystem.databaseConnection;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,8 +23,14 @@ public class StudentLogin extends javax.swing.JFrame {
     /**
      * Creates new form StudentLogin
      */
+    Connection conn = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+    
     public StudentLogin() {
-        initComponents();
+        super("Login");
+        initComponents(); 
+        conn = databaseConnection.connection();
     }
 
     /**
@@ -141,7 +156,7 @@ public class StudentLogin extends javax.swing.JFrame {
             String userEmail = email.getText();
             String userPass = password.getText();
 
-            String sql = "SELECT * FROM admin WHERE mail='"+userEmail+"' && password = '"+userPass+"'";
+            String sql = "SELECT * FROM studentLog WHERE mail='"+userEmail+"' && password = '"+userPass+"'";
 
             rs = stmt.executeQuery(sql);
             if(rs.next()){
