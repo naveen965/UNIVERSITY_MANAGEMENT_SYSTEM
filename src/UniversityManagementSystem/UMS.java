@@ -5,6 +5,8 @@
  */
 package UniversityManagementSystem;
 
+import DBconnection.databaseConnection;
+
 /**
  *
  * @author Naveen Rajasekara

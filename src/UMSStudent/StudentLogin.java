@@ -6,7 +6,7 @@
 package UMSStudent;
 
 import UniversityManagementSystem.Home;
-import UniversityManagementSystem.databaseConnection;
+import DBconnection.databaseConnection;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;

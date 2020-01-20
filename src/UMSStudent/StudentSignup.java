@@ -6,13 +6,14 @@
 package UMSStudent;
 
 import UniversityManagementSystem.Home;
-import UniversityManagementSystem.databaseConnection;
+import DBconnection.databaseConnection;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import java.lang.NullPointerException;
 
 /**
  *
@@ -176,7 +177,7 @@ public class StudentSignup extends javax.swing.JFrame {
             String userEmail = email.getText();
             String userPass = password.getText();
 
-            String sql = "INSERT INTO `	studentlog` (`id`, `name`, `email`, `password`) VALUES (NULL, '"+userName+"', '"+userEmail+"', '"+userPass+"')";
+            String sql = "INSERT INTO `studentlog` (`name`, `email`, `password`) VALUES ('"+userName+"', '"+userEmail+"', '"+userPass+"')";
 
             int result = stmt.executeUpdate(sql);
             //System.out.println(result);

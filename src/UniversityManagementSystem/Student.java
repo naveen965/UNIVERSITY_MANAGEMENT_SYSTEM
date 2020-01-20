@@ -5,6 +5,7 @@
  */
 package UniversityManagementSystem;
 
+import DBconnection.databaseConnection;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
