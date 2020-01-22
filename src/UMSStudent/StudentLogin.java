@@ -28,7 +28,7 @@ public class StudentLogin extends javax.swing.JFrame {
     ResultSet rs = null;
     
     public StudentLogin() {
-        super("Login");
+        super("Student Login");
         initComponents(); 
         conn = databaseConnection.connection();
     }
@@ -49,9 +49,10 @@ public class StudentLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         login = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
-        email = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Student Login", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -83,9 +84,9 @@ public class StudentLogin extends javax.swing.JFrame {
             }
         });
 
-        email.addActionListener(new java.awt.event.ActionListener() {
+        name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                nameActionPerformed(evt);
             }
         });
 
@@ -100,7 +101,7 @@ public class StudentLogin extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(email, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
                     .addComponent(password))
                 .addGap(73, 73, 73))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -123,7 +124,7 @@ public class StudentLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -146,22 +147,23 @@ public class StudentLogin extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(936, 719));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         try{
             conn = databaseConnection.connection();
             stmt = conn.createStatement();
-            String userEmail = email.getText();
+            String userName = name.getText();
             String userPass = password.getText();
 
-            String sql = "SELECT * FROM studentLog WHERE mail='"+userEmail+"' && password = '"+userPass+"'";
+            String sql = "SELECT * FROM studentLog WHERE name='"+userName+"' && password = '"+userPass+"'";
 
             rs = stmt.executeQuery(sql);
             if(rs.next()){
                 setVisible(false);
-                Home object = new Home();
+                StudentHome object = new StudentHome();
                 object.setVisible(true);
             }
             else{
@@ -177,9 +179,9 @@ public class StudentLogin extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_cancelActionPerformed
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_nameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,12 +220,12 @@ public class StudentLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel;
-    private javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login;
+    private javax.swing.JTextField name;
     private javax.swing.JPasswordField password;
     // End of variables declaration//GEN-END:variables
 }
