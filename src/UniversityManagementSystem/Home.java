@@ -5,6 +5,8 @@
  */
 package UniversityManagementSystem;
 
+import Exit.Exit;
+
 /**
  *
  * @author Naveen Rajasekara
@@ -341,7 +343,16 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        System.exit(0);
+        if(true){
+            setVisible(false);
+            Exit object = new Exit();
+            object.setVisible(true);
+        }
+        else{
+            setVisible(false);
+            Home object = new Home();
+            object.setVisible(true);
+        }
     }//GEN-LAST:event_exitActionPerformed
 
     /**

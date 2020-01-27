@@ -6,6 +6,7 @@
 package UniversityManagementSystem;
 
 import DBconnection.databaseConnection;
+import Exit.Exit;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -176,7 +177,16 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        System.exit(0);
+        if(true){
+            setVisible(false);
+            Exit object = new Exit();
+            object.setVisible(true);
+        }
+        else{
+            setVisible(false);
+            Login object = new Login();
+            object.setVisible(true);
+        }
     }//GEN-LAST:event_cancelActionPerformed
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
