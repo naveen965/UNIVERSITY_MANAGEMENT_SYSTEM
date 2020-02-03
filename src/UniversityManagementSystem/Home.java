@@ -348,11 +348,6 @@ public class Home extends javax.swing.JFrame {
             Exit object = new Exit();
             object.setVisible(true);
         }
-        else{
-            setVisible(false);
-            Home object = new Home();
-            object.setVisible(true);
-        }
     }//GEN-LAST:event_exitActionPerformed
 
     /**
