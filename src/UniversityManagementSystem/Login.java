@@ -177,20 +177,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        
-        
-        if(true){
-            setVisible(false);
-            Exit object = new Exit();
-            object.setexitpage(2);
-            object.setVisible(true);
-            
-        }
-        else{
-            setVisible(false);
-            Login object = new Login();
-            object.setVisible(true);
-        }
+        setVisible(false);
+        Exit exit = new Exit();
+        exit.setExitPage(2);
+        exit.setVisible(true);
     }//GEN-LAST:event_cancelActionPerformed
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed

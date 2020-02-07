@@ -5,8 +5,16 @@
  */
 package Exit;
 
+import UniversityManagementSystem.About;
+import UniversityManagementSystem.AddAdmin;
+import UniversityManagementSystem.AddStudent;
+import UniversityManagementSystem.Admin;
 import UniversityManagementSystem.Home;
 import UniversityManagementSystem.Login;
+import UniversityManagementSystem.ShowAdmin;
+import UniversityManagementSystem.ShowStudent;
+import UniversityManagementSystem.SignUp;
+import UniversityManagementSystem.Student;
 import UniversityManagementSystem.UMS;
 
 /**
@@ -23,8 +31,8 @@ public class Exit extends javax.swing.JFrame {
         initComponents();
         
     }
-    public void setexitpage(int x){
-        count=x;
+    public void setExitPage(int x){
+        count = x;
     }
 
     /**
@@ -112,21 +120,46 @@ public class Exit extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        if(count==1){
+        if(count == 1){
+            setVisible(false);
+            new Login().setVisible(true);    
+        }
+        else if(count == 2){
+            setVisible(false);
+            new SignUp().setVisible(true);
+        }
+        else if(count == 3){
             setVisible(false);
             new Home().setVisible(true);
-            
         }
-         
-        else if(count==2){
+        else if(count == 4){
             setVisible(false);
-            new Login().setVisible(true);
+            new About().setVisible(true);
         }
-          
-       
-        
-       // UMS ex = UMS.exit();
-        
+        else if(count == 5){
+            setVisible(false);
+            new AddAdmin().setVisible(true);
+        }
+        else if(count == 6){
+            setVisible(false);
+            new AddStudent().setVisible(true);
+        }
+        else if(count == 7){
+            setVisible(false);
+            new Admin().setVisible(true);
+        }
+        else if(count == 8){
+            setVisible(false);
+            new ShowAdmin().setVisible(true);
+        }
+        else if(count == 9){
+            setVisible(false);
+            new ShowStudent().setVisible(true);
+        }
+        else if(count == 10){
+            setVisible(false);
+            new Student().setVisible(true);
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
