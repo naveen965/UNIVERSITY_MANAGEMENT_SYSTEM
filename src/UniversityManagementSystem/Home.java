@@ -343,11 +343,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        if(true){
-            setVisible(false);
-            Exit object = new Exit();
-            object.setVisible(true);
-        }
+        setVisible(false);
+        Exit object = new Exit();
+        object.setexitpage(1);
+        object.setVisible(true);
     }//GEN-LAST:event_exitActionPerformed
 
     /**

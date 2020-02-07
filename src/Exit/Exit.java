@@ -6,6 +6,7 @@
 package Exit;
 
 import UniversityManagementSystem.Home;
+import UniversityManagementSystem.Login;
 import UniversityManagementSystem.UMS;
 
 /**
@@ -17,8 +18,13 @@ public class Exit extends javax.swing.JFrame {
     /**
      * Creates new form Exit
      */
+    int count;
     public Exit() {
         initComponents();
+        
+    }
+    public void setexitpage(int x){
+        count=x;
     }
 
     /**
@@ -105,7 +111,23 @@ public class Exit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        UMS ex = UMS.exit();
+        
+        if(count==1){
+            setVisible(false);
+            new Home().setVisible(true);
+            
+        }
+         
+        else if(count==2){
+            setVisible(false);
+            new Login().setVisible(true);
+        }
+          
+       
+        
+       // UMS ex = UMS.exit();
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

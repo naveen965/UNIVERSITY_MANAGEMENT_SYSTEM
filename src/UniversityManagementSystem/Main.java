@@ -201,7 +201,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_signinMouseReleased
 
     private void signinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinActionPerformed
-        UMS signin = UMS.signIn();
+        setVisible(false);
+        Login object = new Login();
+        object.setVisible(true);
     }//GEN-LAST:event_signinActionPerformed
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered

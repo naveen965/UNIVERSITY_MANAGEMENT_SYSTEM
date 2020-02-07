@@ -26,15 +26,15 @@ public class UMS {
 //        lg.loginActionPerformed(java.awt.event.ActionEvent evt);
     }
 
-    public static UMS signIn(){
-        setVisible(false);
-        Login object = new Login();
-        object.setVisible(true);
-        return new UMS();
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    public static UMS exit(){
-        return exit();
-    }
+//    public static UMS signIn(){
+//        setVisible(false);
+//        Login object = new Login();
+//        object.setVisible(true);
+//        return new UMS();
+//        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//    
+//    public static UMS exit(){
+//        return exit();
+//    }
 }
