@@ -1,5 +1,6 @@
 package UMSStudent;
 
+import Exit.Exit;
 import UniversityManagementSystem.About;
 import UniversityManagementSystem.Home;
 import UniversityManagementSystem.Login;
@@ -213,7 +214,10 @@ public class StudentEnrolment extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        System.exit(0);
+        setVisible(false);
+        Exit exit = new Exit();
+        exit.setExitPage(14);
+        exit.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed

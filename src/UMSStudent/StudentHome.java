@@ -5,6 +5,7 @@
  */
 package UMSStudent;
 
+import Exit.Exit;
 import UniversityManagementSystem.About;
 import UniversityManagementSystem.AddStudent;
 import UniversityManagementSystem.Home;
@@ -183,7 +184,10 @@ public class StudentHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        System.exit(0);
+        setVisible(false);
+        Exit exit = new Exit();
+        exit.setExitPage(13);
+        exit.setVisible(true);
     }//GEN-LAST:event_exitActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -199,7 +203,10 @@ public class StudentHome extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        System.exit(0);
+        setVisible(false);
+        Exit exit = new Exit();
+        exit.setExitPage(13);
+        exit.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed

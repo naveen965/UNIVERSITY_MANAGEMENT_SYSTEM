@@ -5,6 +5,10 @@
  */
 package Exit;
 
+import UMSStudent.StudentEnrolment;
+import UMSStudent.StudentHome;
+import UMSStudent.StudentLogin;
+import UMSStudent.StudentSignup;
 import UniversityManagementSystem.About;
 import UniversityManagementSystem.AddAdmin;
 import UniversityManagementSystem.AddStudent;
@@ -159,6 +163,22 @@ public class Exit extends javax.swing.JFrame {
         else if(count == 10){
             setVisible(false);
             new Student().setVisible(true);
+        }
+        else if(count == 11){
+            setVisible(false);
+            new StudentLogin().setVisible(true);
+        }
+        else if(count == 12){
+            setVisible(false);
+            new StudentSignup().setVisible(true);
+        }
+        else if(count == 13){
+            setVisible(false);
+            new StudentHome().setVisible(true);
+        }
+        else if(count == 14){
+            setVisible(false);
+            new StudentEnrolment().setVisible(true);
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed

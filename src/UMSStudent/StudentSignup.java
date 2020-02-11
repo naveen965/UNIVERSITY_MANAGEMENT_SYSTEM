@@ -7,6 +7,7 @@ package UMSStudent;
 
 import UniversityManagementSystem.Home;
 import DBconnection.databaseConnection;
+import Exit.Exit;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -199,7 +200,10 @@ public class StudentSignup extends javax.swing.JFrame {
     }//GEN-LAST:event_signup1ActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        System.exit(0);
+        setVisible(false);
+        Exit exit = new Exit();
+        exit.setExitPage(12);
+        exit.setVisible(true);
     }//GEN-LAST:event_cancelActionPerformed
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed

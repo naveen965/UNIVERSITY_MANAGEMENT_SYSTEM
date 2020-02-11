@@ -29,7 +29,7 @@ public class Student extends javax.swing.JFrame {
     ResultSet rs = null;
     
     public Student() {
-       super("Scholer");
+        super("Scholer");
         initComponents();
         conn = databaseConnection.connection();
     }
