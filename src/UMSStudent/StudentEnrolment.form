@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.7" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
@@ -127,7 +127,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jScrollPane2" alignment="1" min="-2" pref="649" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="0" min="-2" pref="649" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jTextField1" min="-2" pref="558" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -150,9 +150,9 @@
                       <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                  <EmptySpace pref="98" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -180,7 +180,12 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTree" name="jTree1">
+            <Component class="javax.swing.JTree" name="Naveen">
+              <Properties>
+                <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
+                  <TreeModel code="Faculties&#xa; Faculty of Science&#xa;  blue&#xa;  violet&#xa;  red&#xa;  yellow&#xa; Faculty of Social Science&#xa;  basketball&#xa;  soccer&#xa;  football&#xa;  hockey&#xa; Faculty of Commers and Management&#xa;  hot dogs&#xa;  pizza&#xa;  ravioli&#xa;  bananas&#xa; Faculty of Medicene&#xa;  hot dogs&#xa;  pizza&#xa;  ravioli&#xa;  bananas"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
