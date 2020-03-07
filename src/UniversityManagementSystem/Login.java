@@ -5,7 +5,7 @@
  */
 package UniversityManagementSystem;
 
-import DBconnection.databaseConnection;
+import DBconnection.DatabaseConnection;
 import Exit.Exit;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -30,7 +30,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         super("Login");
         initComponents(); 
-        conn = databaseConnection.connection();
+        conn = DatabaseConnection.connection();
     }
 
     /**
@@ -165,7 +165,7 @@ public class Login extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         try{
-            conn = databaseConnection.connection();
+            conn = DatabaseConnection.connection();
             stmt = conn.createStatement();
             String userEmail = email.getText();
             String userPass = password.getText();

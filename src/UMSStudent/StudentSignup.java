@@ -6,7 +6,7 @@
 package UMSStudent;
 
 import UniversityManagementSystem.Home;
-import DBconnection.databaseConnection;
+import DBconnection.DatabaseConnection;
 import Exit.Exit;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -28,7 +28,7 @@ public class StudentSignup extends javax.swing.JFrame {
     public StudentSignup() {
         super("Student Sign Up");
         initComponents(); 
-        conn = databaseConnection.connection();
+        conn = DatabaseConnection.connection();
     }
     
     Connection conn = null;
@@ -174,7 +174,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
     private void signup1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup1ActionPerformed
         try{
-            conn = databaseConnection.connection();
+            conn = DatabaseConnection.connection();
             stmt = conn.createStatement();
             String userName = name.getText();
             String userEmail = email.getText();

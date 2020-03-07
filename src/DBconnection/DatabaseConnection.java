@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  *
  * @author Naveen Rajasekara
  */
-public class databaseConnection {
+public class DatabaseConnection {
     
     final static String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     final static String DB_URL = "jdbc:mysql://localhost:3306/university";   

@@ -5,7 +5,7 @@
  */
 package UniversityManagementSystem;
 
-import DBconnection.databaseConnection;
+import DBconnection.DatabaseConnection;
 import static com.sun.glass.ui.Cursor.setVisible;
 
 /**
@@ -19,8 +19,8 @@ public class UMS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        databaseConnection databaseconnection = new databaseConnection();
-        databaseConnection.connection();
+        DatabaseConnection databaseconnection = new DatabaseConnection();
+        DatabaseConnection.connection();
         Main welcome = new Main();
         welcome.setVisible(true);
     }

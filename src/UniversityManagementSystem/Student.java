@@ -5,7 +5,7 @@
  */
 package UniversityManagementSystem;
 
-import DBconnection.databaseConnection;
+import DBconnection.DatabaseConnection;
 import Exit.Exit;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -31,7 +31,7 @@ public class Student extends javax.swing.JFrame {
     public Student() {
         super("Scholer");
         initComponents();
-        conn = databaseConnection.connection();
+        conn = DatabaseConnection.connection();
     }
 
     /**

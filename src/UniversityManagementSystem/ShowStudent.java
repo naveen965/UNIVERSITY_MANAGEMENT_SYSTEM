@@ -5,7 +5,7 @@
  */
 package UniversityManagementSystem;
 
-import DBconnection.databaseConnection;
+import DBconnection.DatabaseConnection;
 import Exit.Exit;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -30,7 +30,7 @@ public class ShowStudent extends javax.swing.JFrame {
     public ShowStudent() {
         super("Student");
         initComponents();
-        conn = databaseConnection.connection();
+        conn = DatabaseConnection.connection();
         showRecord();
     }
     
