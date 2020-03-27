@@ -144,6 +144,11 @@ public class AddStudent extends javax.swing.JFrame {
         jLabel6.setText("Faculty");
 
         faculty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Faculty of Medicine", "Faculty of Science", "Faculty of Commerce and Management", "Faculty of Social Science", "Faculty of Humanities", "Faculty of Computing and Technology", "Faculty of Post Graduate Studies" }));
+        faculty.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                facultyActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel7.setText("Academic Year");
@@ -434,6 +439,10 @@ public class AddStudent extends javax.swing.JFrame {
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailActionPerformed
+
+    private void facultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_facultyActionPerformed
 
     /**
      * @param args the command line arguments
