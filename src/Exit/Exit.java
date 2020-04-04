@@ -5,7 +5,7 @@
  */
 package Exit;
 
-import UMSStudent.StudentEnrolment;
+import UMSStudent.StudentChooser;
 import UMSStudent.StudentHome;
 import UMSStudent.StudentLogin;
 import UMSStudent.StudentSignup;
@@ -178,7 +178,7 @@ public class Exit extends javax.swing.JFrame {
         }
         else if(count == 14){
             setVisible(false);
-            new StudentEnrolment().setVisible(true);
+            new StudentChooser().setVisible(true);
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed
