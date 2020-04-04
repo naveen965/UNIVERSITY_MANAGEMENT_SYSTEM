@@ -70,6 +70,12 @@ public class StudentEnrolment extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setText("Enrol ");
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Search");
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Faculties");
@@ -1753,6 +1759,24 @@ public class StudentEnrolment extends javax.swing.JFrame {
         Home object = new Home();
         object.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        /*
+        TreePath Faculty = jTree1.getSelectionPath();
+            //DefaultMutableTreeNode Faculty = (DefaultMutableTreeNode) jTree1.addTreeSelectionListener(tsl);
+            //facultyanddepartment.setText(Faculty.getUserObject().toString());
+            
+            add(facultyanddepartment, BorderLayout.SOUTH);
+            jTree1.getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
+                @Override
+                public void valueChanged(TreeSelectionEvent e) {
+                    DefaultMutableTreeNode Faculty = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+                    facultyanddepartment.setText(Faculty.getUserObject().toString());
+                }
+            });
+            DefaultMutableTreeNode Department = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+        */
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

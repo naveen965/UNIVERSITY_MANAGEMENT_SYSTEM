@@ -46,10 +46,10 @@
                               </Group>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="studentnumber" alignment="1" pref="279" max="32767" attributes="0"/>
                                   <Component id="phone" alignment="0" max="32767" attributes="0"/>
                                   <Component id="academicyear" alignment="0" max="32767" attributes="0"/>
                                   <Component id="address" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="studentnumber" alignment="0" pref="279" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -71,9 +71,11 @@
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jScrollPane1" alignment="0" pref="419" max="32767" attributes="0"/>
-                          <Component id="facultyanddepartment" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="faculty" pref="427" max="32767" attributes="0"/>
+                          <Component id="facultyanddepartment" min="-2" pref="419" max="-2" attributes="0"/>
+                          <Component id="degree_programe" alignment="1" pref="427" max="32767" attributes="0"/>
+                          <Component id="department" alignment="0" pref="427" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -124,9 +126,13 @@
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="studentnumber" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="104" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+              <Component id="faculty" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="department" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <Component id="degree_programe" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="facultyanddepartment" min="-2" pref="24" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -215,9 +221,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="studentnumber">
+    <Component class="javax.swing.JTextField" name="faculty">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentnumberActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="facultyActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="fatherName">
@@ -265,23 +271,22 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTree" name="jTree1">
-          <Properties>
-            <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-              <TreeModel code="Faculties&#xa; Faculty of Humenities&#xa;  Department of English&#xa;  Department of English Language Teaching&#xa;  Depatrment of Fine Arts&#xa;   Visual Arts, Design &amp; Performing Arts Unit&#xa;   Drama &amp; Theatre and Image Arts Unit&#xa;  Department of Hindi&#xa;  Department of Linguistics&#xa;  Department of Modern Languages&#xa;  Department of Pali and Buddhist Studies&#xa;  Department of Sanskrit&#xa;  Department of Sinhala&#xa;  Department of Western Classical Culture &amp; Christian Culture&#xa; Faculty of Social Science&#xa;  Department of Archaelogy&#xa;  Department of Economics&#xa;  Department of Geography&#xa;  Department of History&#xa;  Department of Library and Information Science&#xa;  Department of Mass Communication&#xa;  Department of Philosophy&#xa;  Department of Sociology&#xa;  Department of Political Science&#xa;  Department of Social Statistics&#xa;  Department of International Studies&#xa;  Department of Sport Science and Physical Education&#xa; Faculty of Science&#xa;  Department of Plant and Molecular Biology&#xa;  Department of Chemistry&#xa;  Department of Industrial Management&#xa;  Department of Mathematics&#xa;  Department of Physics&#xa;  Department of Microbiology&#xa;  Department of Statistics &amp; Computer Science&#xa;  Department of Zoology and Environmental Management&#xa;  Department of Software Engineering Teaching Unit&#xa; Faculty of Commers and Management&#xa;  Department of Commerce &amp; Financial Management&#xa;  Department of Accountancy&#xa;  Department of Finance&#xa;  Department of Human Resource Management&#xa;  Department of Marketing Management&#xa; Faculty of Medicene&#xa;  Department of Anatomy&#xa;  Department of Biochemestry &amp; Clinical Chemestry&#xa;  Department of Disacility Studies&#xa;  Department of Family Medicine&#xa;  Department of Forensic Medicine&#xa;  Department of Medical Education&#xa;  Department of Medical Microbiology&#xa;  Department of Medicine&#xa;  Department of Obstetrics &amp; Gynecology&#xa;  Department of Paediatrics&#xa;  Department of Parasitology&#xa;  Department of Pathology&#xa;  Department of Pharmacology&#xa;  Department of Physicology&#xa;  Department of Psychiatry&#xa;  Department of Public Health&#xa;  Department of Surgery&#xa; Faculty of Computing and Technology&#xa;  Department of Applied Computing&#xa;  Department of Computer System Engineering&#xa;  Department of Software Engineering&#xa; Faculty of Graduate Studies"/>
-            </Property>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
     <Component class="javax.swing.JLabel" name="facultyanddepartment">
+    </Component>
+    <Component class="javax.swing.JTextField" name="degree_programe">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="degree_programeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="studentnumber">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentnumberActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="department">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="departmentActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UniversityManagementSystem;
+
 
 import DBconnection.DatabaseConnection;
+import UniversityManagementSystem.Home;
+import UniversityManagementSystem.ShowStudent;
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -58,16 +60,17 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
-        studentnumber = new javax.swing.JTextField();
+        faculty = new javax.swing.JTextField();
         fatherName = new javax.swing.JTextField();
         academicyear = new javax.swing.JTextField();
         address = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
         facultyanddepartment = new javax.swing.JLabel();
+        degree_programe = new javax.swing.JTextField();
+        studentnumber = new javax.swing.JTextField();
+        department = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,9 +119,9 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        studentnumber.addActionListener(new java.awt.event.ActionListener() {
+        faculty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                studentnumberActionPerformed(evt);
+                facultyActionPerformed(evt);
             }
         });
 
@@ -159,139 +162,23 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Faculties");
-        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Faculty of Humenities");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of English");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of English Language Teaching");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Depatrment of Fine Arts");
-        javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Visual Arts, Design & Performing Arts Unit");
-        treeNode3.add(treeNode4);
-        treeNode4 = new javax.swing.tree.DefaultMutableTreeNode("Drama & Theatre and Image Arts Unit");
-        treeNode3.add(treeNode4);
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Hindi");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Linguistics");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Modern Languages");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Pali and Buddhist Studies");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Sanskrit");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Sinhala");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Western Classical Culture & Christian Culture");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Faculty of Social Science");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Archaelogy");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Economics");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Geography");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of History");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Library and Information Science");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Mass Communication");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Philosophy");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Sociology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Political Science");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Social Statistics");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of International Studies");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Sport Science and Physical Education");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Faculty of Science");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Plant and Molecular Biology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Chemistry");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Industrial Management");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Mathematics");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Physics");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Microbiology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Statistics & Computer Science");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Zoology and Environmental Management");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Software Engineering Teaching Unit");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Faculty of Commers and Management");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Commerce & Financial Management");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Accountancy");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Finance");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Human Resource Management");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Marketing Management");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Faculty of Medicene");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Anatomy");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Biochemestry & Clinical Chemestry");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Disacility Studies");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Family Medicine");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Forensic Medicine");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Medical Education");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Medical Microbiology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Medicine");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Obstetrics & Gynecology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Paediatrics");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Parasitology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Pathology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Pharmacology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Physicology");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Psychiatry");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Public Health");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Surgery");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Faculty of Computing and Technology");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Applied Computing");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Computer System Engineering");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Department of Software Engineering");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Faculty of Graduate Studies");
-        treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        degree_programe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                degree_programeActionPerformed(evt);
+            }
+        });
+
+        studentnumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentnumberActionPerformed(evt);
+            }
+        });
+
+        department.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                departmentActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -316,10 +203,10 @@ public class NewJFrame extends javax.swing.JFrame {
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(27, 27, 27)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(studentnumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                                     .addComponent(phone)
                                     .addComponent(academicyear)
-                                    .addComponent(address)))
+                                    .addComponent(address)
+                                    .addComponent(studentnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -334,9 +221,11 @@ public class NewJFrame extends javax.swing.JFrame {
                                     .addComponent(name, javax.swing.GroupLayout.Alignment.LEADING))))
                         .addGap(36, 36, 36))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
-                            .addComponent(facultyanddepartment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(faculty, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+                            .addComponent(facultyanddepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(degree_programe, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+                            .addComponent(department, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -374,9 +263,13 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(studentnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(71, 71, 71)
+                .addComponent(faculty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(department, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(degree_programe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(facultyanddepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -405,9 +298,9 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
-    private void studentnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentnumberActionPerformed
+    private void facultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_studentnumberActionPerformed
+    }//GEN-LAST:event_facultyActionPerformed
 
     private void fatherNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fatherNameActionPerformed
         // TODO add your handling code here:
@@ -431,20 +324,10 @@ public class NewJFrame extends javax.swing.JFrame {
             String Address = address.getText();
             String Phone = phone.getText();
             String AcademicYear = academicyear.getText();
-            String StudentNumber = studentnumber.getText();
-            TreePath Faculty = jTree1.getSelectionPath();
-            //DefaultMutableTreeNode Faculty = (DefaultMutableTreeNode) jTree1.addTreeSelectionListener(tsl);
-            //facultyanddepartment.setText(Faculty.getUserObject().toString());
-            
-            add(facultyanddepartment, BorderLayout.SOUTH);
-            jTree1.getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
-                @Override
-                public void valueChanged(TreeSelectionEvent e) {
-                    DefaultMutableTreeNode Faculty = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-                    facultyanddepartment.setText(Faculty.getUserObject().toString());
-                }
-            });
-            DefaultMutableTreeNode Department = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+            String StudentNumber = faculty.getText();
+            String Faculty = faculty.getText();
+            String Department = department.getText();
+            String Degree_Programe = degree_programe.getText();
             
             String sql = "INSERT INTO student(name, fathername, nic, email, address, phone, academicyear, studentnumber, faculty, department) "
             + "VALUES('"+Name+"', '"+FatherName+"', '"+Nic+"', '"+Email+"', '"+Address+"', '"+Phone+"', '"+AcademicYear+"', '"+StudentNumber+"', '"+Faculty+"', '"+Department+"')";
@@ -464,6 +347,18 @@ public class NewJFrame extends javax.swing.JFrame {
         Home object = new Home();
         object.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void degree_programeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degree_programeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_degree_programeActionPerformed
+
+    private void studentnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentnumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_studentnumberActionPerformed
+
+    private void departmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departmentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_departmentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -503,7 +398,10 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField academicyear;
     private javax.swing.JTextField address;
+    private javax.swing.JTextField degree_programe;
+    private javax.swing.JTextField department;
     private javax.swing.JTextField email;
+    private javax.swing.JTextField faculty;
     private javax.swing.JLabel facultyanddepartment;
     private javax.swing.JTextField fatherName;
     private javax.swing.JButton jButton1;
@@ -516,8 +414,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTree jTree1;
     private javax.swing.JTextField name;
     private javax.swing.JTextField nic;
     private javax.swing.JTextField phone;
