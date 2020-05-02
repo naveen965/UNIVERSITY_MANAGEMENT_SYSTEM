@@ -10,8 +10,13 @@ import Exit.Exit;
 import UniversityManagementSystem.About;
 import UniversityManagementSystem.Home;
 import UniversityManagementSystem.Login;
+import UniversityManagementSystem.ShowStudent;
+import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -34,43 +39,31 @@ public class StudentEnrolment extends javax.swing.JFrame {
         super("Student");
         initComponents();
         conn = DatabaseConnection.connection();
-        //showRecord();
-        table();
+        showRecord();
     }
     
-    public void showRecord(){
-        try{
-            stmt = conn.createStatement();
-            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = 'Year I'";
-            rs = stmt.executeQuery(sql);
-            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
+//    public void showRecord(){
+//        try{
+//            stmt = conn.createStatement();
+//            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = 'Year I'";
+//            rs = stmt.executeQuery(sql);
+//            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+//        }
+//        catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//        }
+//    }
     
-    public void table() {
+    public void showRecord() {
         try {
             stmt = conn.createStatement();
-            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = 'Year I'";
+            String Year = year.getText();
+            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = '"+Year+"'";
             rs = stmt.executeQuery(sql);
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-
-                    new Object [][] {
-                        {},
-                        {},
-                        {}
-                    },
-                new String [] {
-                    "Semester", "Course", "Enroll"
-                }
-            ) {
-                Class[] types = new Class [] {
-                    java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
-                };
-
-                public Class<?> getColumnClass(int column) {
+            DefaultTableModel model = new DefaultTableModel()
+            {
+                public Class<?> getColumnClass(int column)
+                {
                     switch(column)
                     {
                         case 0:
@@ -83,7 +76,25 @@ public class StudentEnrolment extends javax.swing.JFrame {
                             return String.class;
                     }
                 }
-            });
+            };
+
+            //ASSIGN THE MODEL TO TABLE
+            jTable1.setModel(model);
+
+            model.addColumn("Semester");
+            model.addColumn("Course");
+            model.addColumn("Enroll");
+            
+            int i = 0;
+            while(rs.next()) {
+                model.addRow(new Object[0]);
+                model.setValueAt(rs.getString(1), i, 0);
+                model.setValueAt(rs.getString(2), i, 1);
+                model.setValueAt(rs.getBoolean(3),i,2);
+                i++;
+            }
+
+
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -102,6 +113,9 @@ public class StudentEnrolment extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btn = new javax.swing.JButton();
+        year = new javax.swing.JTextField();
+        search = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -117,18 +131,57 @@ public class StudentEnrolment extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
+        btn.setText("Select");
+        btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActionPerformed(evt);
+            }
+        });
+
+        year.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yearActionPerformed(evt);
+            }
+        });
+
+        search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/loupe.png"))); // NOI18N
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(589, 589, 589)
+                .addComponent(btn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1283, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, 1092, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 772, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(year))
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(btn)
+                .addGap(38, 38, 38))
         );
 
         jMenu1.setText("File");
@@ -221,6 +274,37 @@ public class StudentEnrolment extends javax.swing.JFrame {
         object.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
+        try{
+            stmt = conn.createStatement();
+
+            String Year = year.getText();
+
+            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = '"+Year+"'";
+
+            stmt.executeUpdate(sql);
+            
+            if(rs.next()){
+                year.setText(rs.getString("Name"));
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Record Not Found");
+            }
+
+        }
+        catch(HeadlessException | NumberFormatException | SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btnActionPerformed
+
+    private void yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yearActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        
+    }//GEN-LAST:event_searchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -257,6 +341,7 @@ public class StudentEnrolment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -267,5 +352,7 @@ public class StudentEnrolment extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton search;
+    private javax.swing.JTextField year;
     // End of variables declaration//GEN-END:variables
 }
