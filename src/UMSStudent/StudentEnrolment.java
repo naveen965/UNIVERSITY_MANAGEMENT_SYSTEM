@@ -34,15 +34,56 @@ public class StudentEnrolment extends javax.swing.JFrame {
         super("Student");
         initComponents();
         conn = DatabaseConnection.connection();
-        showRecord();
+        //showRecord();
+        table();
     }
     
     public void showRecord(){
         try{
             stmt = conn.createStatement();
             String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = 'Year I'";
-            ResultSet res = stmt.executeQuery(sql);
-            jTable1.setModel(DbUtils.resultSetToTableModel(res));
+            rs = stmt.executeQuery(sql);
+            jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    public void table() {
+        try {
+            stmt = conn.createStatement();
+            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = 'Year I'";
+            rs = stmt.executeQuery(sql);
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+
+                    new Object [][] {
+                        {},
+                        {},
+                        {}
+                    },
+                new String [] {
+                    "Semester", "Course", "Enroll"
+                }
+            ) {
+                Class[] types = new Class [] {
+                    java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+                };
+
+                public Class<?> getColumnClass(int column) {
+                    switch(column)
+                    {
+                        case 0:
+                            return String.class;
+                        case 1:
+                            return String.class;
+                        case 2:
+                            return Boolean.class;
+                        default:
+                            return String.class;
+                    }
+                }
+            });
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -71,24 +112,7 @@ public class StudentEnrolment extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Semester", "Course", "Enroll"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        jTable1.setModel(new DefaultTableModel());
         jTable1.setColumnSelectionAllowed(true);
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -161,14 +185,15 @@ public class StudentEnrolment extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1325, 845));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
