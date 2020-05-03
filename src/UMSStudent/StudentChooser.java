@@ -1489,6 +1489,11 @@ public class StudentChooser extends javax.swing.JFrame {
         selectItem.setFont(new java.awt.Font("Tekton Pro Ext", 1, 18)); // NOI18N
         selectItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/select.png"))); // NOI18N
         selectItem.setText("   Select");
+        selectItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectItemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1609,6 +1614,10 @@ public class StudentChooser extends javax.swing.JFrame {
         Home object = new Home();
         object.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void selectItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectItemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selectItemActionPerformed
 
     /**
      * @param args the command line arguments
