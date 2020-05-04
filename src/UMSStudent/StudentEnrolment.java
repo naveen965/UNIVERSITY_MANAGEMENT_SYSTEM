@@ -70,7 +70,7 @@ public class StudentEnrolment extends javax.swing.JFrame {
 //            }
 //            });
 //            String year = selectedLabel.getText();
-            String sql = "SELECT Semester, Coursecode_and_Subject, Select_Courses FROM `enrolment` WHERE year = 'Year I'";
+            String sql = "SELECT Semester, Coursecode_and_Subject, Select_Courses FROM `enrolment` WHERE Year = 'Year I' AND Faculty = 'Faculty of Science' AND Degree_programe = 'Bachelor of Science Honours in Software Engineering (SENG)' ORDER BY Semester ASC";
             rs = stmt.executeQuery(sql);
             DefaultTableModel model = new DefaultTableModel()
             {
@@ -836,30 +836,29 @@ public class StudentEnrolment extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
-        try{
-            stmt = conn.createStatement();
-            int i = jTable1.getSelectedRow();
-            int selectedRowIndex = jTable1.getSelectedRow();
-            DefaultTableModel Semester = (DefaultTableModel) jTable1.getModel();
-
-            String sql = "INSERT INTO `enroled` (`Semester`, `Coursecode_and_Subject`) VALUE ('"+Semester+"', 'sdfs')";
-
-            int result = stmt.executeUpdate(sql);
-            //System.out.println(result);
-            if(result == 1){
-                JOptionPane.showMessageDialog(null, "Registration Succeed");
-                setVisible(false);
-                Home object = new Home();
-                object.setVisible(true);
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Registration Unsuccessful");
-            }
-
-        }
-        catch(HeadlessException | NumberFormatException | SQLException e){
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        try{
+//            stmt = conn.createStatement();
+//            int i = jTable1.getSelectedRow();
+//            int selectedRowIndex = jTable1.getSelectedRow();
+//            DefaultTableModel Semester = (DefaultTableModel) jTable1.getModel();
+//
+//            String sql = "INSERT INTO `enroled` (`Semester`, `Coursecode_and_Subject`) VALUE ('"+Semester+"', 'sdfs')";
+//
+//            int result = stmt.executeUpdate(sql);
+//            //System.out.println(result);
+//            if(result == 1){
+//                JOptionPane.showMessageDialog(null, "Registration Succeed");
+//                setVisible(false);
+//                Home object = new Home();
+//                object.setVisible(true);
+//            }
+//            else{
+//                JOptionPane.showMessageDialog(null, "Registration Unsuccessful");
+//            }
+//
+//        }
+//        catch(HeadlessException | NumberFormatException | SQLException e){
+//            JOptionPane.showMessageDialog(null, e);
 //        }
     }//GEN-LAST:event_btnActionPerformed
 

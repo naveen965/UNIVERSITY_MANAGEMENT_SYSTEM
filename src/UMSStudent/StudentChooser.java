@@ -49,6 +49,53 @@ public class StudentChooser extends javax.swing.JFrame {
         initComponents();
         connection = DatabaseConnection.connection();
     }
+    
+    public void showRecord() {
+        try {
+            statement = connection.createStatement();
+            String sql = "SELECT Semester, Coursecode_and_Subject, Select_Courses FROM `enrolment` WHERE "
+                    + "Year = 'Year I' , Faculty = 'Faculty of Science' ,Degree_programe = 'Bachelor of Science Honours in Software Engineering (SENG)'";
+            resultSet = statement.executeQuery(sql);
+            DefaultTableModel model = new DefaultTableModel()
+            {
+                public Class<?> getColumnClass(int column)
+                {
+                    switch(column)
+                    {
+                        case 0:
+                            return String.class;
+                        case 1:
+                            return String.class;
+                        case 2:
+                            return Boolean.class;
+                        default:
+                            return String.class;
+                    }
+                }
+            };
+
+            //ASSIGN THE MODEL TO TABLE
+            jTable1.setModel(model);
+
+            model.addColumn("Semester");
+            model.addColumn("Course");
+            model.addColumn("Select Courses");
+            
+            int i = 0;
+            while(resultSet.next()) {
+                model.addRow(new Object[0]);
+                model.setValueAt(resultSet.getString(1), i, 0);
+                model.setValueAt(resultSet.getString(2), i, 1);
+                model.setValueAt(resultSet.getBoolean(3),i,2);
+                i++;
+            }
+
+
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,8 +110,8 @@ public class StudentChooser extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         selectItem = new javax.swing.JButton();
         Faculty = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        Degree = new javax.swing.JComboBox<>();
+        Year = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -101,9 +148,9 @@ public class StudentChooser extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sinhala, Literary Criticism", "English Language and Literature", "Pali, Buddhist Culture, Buddhist Philosophy", "Sanskrit, Vastu Vidya", "Hindi", "French, German, Russian, Japanese,Chinese, Korean", "Linguistics, Translation Methods, Tamil,Tamil as a Second language", "Western Classical Culture, Christian Culture", "Teaching English as a Second language", "Drama and Theatre, Image Arts (Photography, Television and Cinema)", "Visual Arts (Arts, Computer Design),Performing Arts (Music, Dancing)", "B.A (General Degree) In Anthropology", "B.A (General Degree) In Archeology ", "B.A (special Degree) In Archeology ", "B.A (General Degree) In Tourism and Museum Management ", "B.A (special Degree) In Tourism and Museum Management ", "B.A (General Degree) In Economics ", "B.A (Special Degree) In Economics", "B.A. (General) Geography", "B.A. (Hons) Geography", "B.A. (General) Development Studies", "B.A. (Hons) Development Studies", "B.A. (General) History", "B.A. (Hons) History", "B.A. (General) in International Studies", "B.A.  (Honors) in International Studies", "B.A. (General) Degree Library and Information Science", "B.A. (Special) Degree Library and Information Science", "B.A. (General) Degree MACO ", "B.A. ( Special) Degree MACO", "B.A. (General) Degree PRMM", "B.A. ( Special) Degree PRMM", "B.A (General Degree) In Philosophy", "B.A (Special Degree) In Philosophy", "B.A (General Degree) In Political Science", "B.A (Special Degree) In Political Science", "B.A. (General) in Sociology", "B.A.  (Honours) in Sociology", "B.A. (General) Degree Social Statistics", "B.A. (Honours) Degree Social Statistics", "B.A (General) Degree Sport Science and Physical Education", "B.A (Special) Degree Sport Science and Physical Education", "Bachelor of Science Degree ", "Bachelor of Science Environmental Conservation and Management (ENCM)", "Bachelor of Science Physics and Electronics (PHEL)", "Bachelor of Science Honours in Biochemistry", "Bachelor of Science Honours in chemistry", "Bachelor of Science Honours in Computer Studies", "Bachelor of Science Honours in Information Technology", "Bachelor of Science Honours in Mathematical Physics", "Bachelor of Science Honours in Microbiology", "Bachelor of Science Honours in physics", "Bachelor of Science Honours in Statistics", "Bachelor of Science Honours in Botany", "Bachelor of Science Honours in Computer Science", "Bachelor of Science Honours in Environmental Conservation and Management (ENCM)", "Bachelor of Science Honours in Management and Information Technology (MIT)", "Bachelor of Science Honours in Mathematics", "Bachelor of Science Honours in Molecular Biology & Plant Biotechnology", "Bachelor of Science Honours in Software Engineering (SENG)", "Bachelor of Science Honours in Zoology", "Bachelor  of Commerce (Special) Degree in Commerce", "Bachelor  of Commerce (Special) Degree in Business Technology  ", "Bachelor  of Commerce (Special) Degree in Entrepreneurship", "Bachelor  of Commerce (Special) Degree in Financial  Management", "Bachelor  of Commerce (Special)  Degree External", "Bachelor  of Business Management (Special) Degree in Accountancy", "Bachelor  of Business Management (Special) Degree in Finance ", "Bachelor  of Business Management Honours in Financial Engineering", "Bachelor  of Business Management Honours in Insurance", "Bachelor  of Business Management Honours in Banking", "Bachelor  of Business Management (Special) Degree in Human Resource Management", "Bachelor  of Business Management (General) Degree External", "Bachelor  of Business Management (Special) Degree in Marketing ", "Bachelor of Medicine & Bachelor of Surgery", "Bachelor of Science (Speech & Hearing Sciences) ", "Bachelor of Science Honours in Computer Science Degree", "Bachelor of Engineering Technology (BET) Degree", "Bachelor of Information and Communication Technology (BICT) Degree" }));
+        Degree.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sinhala, Literary Criticism", "English Language and Literature", "Pali, Buddhist Culture, Buddhist Philosophy", "Sanskrit, Vastu Vidya", "Hindi", "French, German, Russian, Japanese,Chinese, Korean", "Linguistics, Translation Methods, Tamil,Tamil as a Second language", "Western Classical Culture, Christian Culture", "Teaching English as a Second language", "Drama and Theatre, Image Arts (Photography, Television and Cinema)", "Visual Arts (Arts, Computer Design),Performing Arts (Music, Dancing)", "B.A (General Degree) In Anthropology", "B.A (General Degree) In Archeology ", "B.A (special Degree) In Archeology ", "B.A (General Degree) In Tourism and Museum Management ", "B.A (special Degree) In Tourism and Museum Management ", "B.A (General Degree) In Economics ", "B.A (Special Degree) In Economics", "B.A. (General) Geography", "B.A. (Hons) Geography", "B.A. (General) Development Studies", "B.A. (Hons) Development Studies", "B.A. (General) History", "B.A. (Hons) History", "B.A. (General) in International Studies", "B.A.  (Honors) in International Studies", "B.A. (General) Degree Library and Information Science", "B.A. (Special) Degree Library and Information Science", "B.A. (General) Degree MACO ", "B.A. ( Special) Degree MACO", "B.A. (General) Degree PRMM", "B.A. ( Special) Degree PRMM", "B.A (General Degree) In Philosophy", "B.A (Special Degree) In Philosophy", "B.A (General Degree) In Political Science", "B.A (Special Degree) In Political Science", "B.A. (General) in Sociology", "B.A.  (Honours) in Sociology", "B.A. (General) Degree Social Statistics", "B.A. (Honours) Degree Social Statistics", "B.A (General) Degree Sport Science and Physical Education", "B.A (Special) Degree Sport Science and Physical Education", "Bachelor of Science Degree ", "Bachelor of Science Environmental Conservation and Management (ENCM)", "Bachelor of Science Physics and Electronics (PHEL)", "Bachelor of Science Honours in Biochemistry", "Bachelor of Science Honours in chemistry", "Bachelor of Science Honours in Computer Studies", "Bachelor of Science Honours in Information Technology", "Bachelor of Science Honours in Mathematical Physics", "Bachelor of Science Honours in Microbiology", "Bachelor of Science Honours in physics", "Bachelor of Science Honours in Statistics", "Bachelor of Science Honours in Botany", "Bachelor of Science Honours in Computer Science", "Bachelor of Science Honours in Environmental Conservation and Management (ENCM)", "Bachelor of Science Honours in Management and Information Technology (MIT)", "Bachelor of Science Honours in Mathematics", "Bachelor of Science Honours in Molecular Biology & Plant Biotechnology", "Bachelor of Science Honours in Software Engineering (SENG)", "Bachelor of Science Honours in Zoology", "Bachelor  of Commerce (Special) Degree in Commerce", "Bachelor  of Commerce (Special) Degree in Business Technology  ", "Bachelor  of Commerce (Special) Degree in Entrepreneurship", "Bachelor  of Commerce (Special) Degree in Financial  Management", "Bachelor  of Commerce (Special)  Degree External", "Bachelor  of Business Management (Special) Degree in Accountancy", "Bachelor  of Business Management (Special) Degree in Finance ", "Bachelor  of Business Management Honours in Financial Engineering", "Bachelor  of Business Management Honours in Insurance", "Bachelor  of Business Management Honours in Banking", "Bachelor  of Business Management (Special) Degree in Human Resource Management", "Bachelor  of Business Management (General) Degree External", "Bachelor  of Business Management (Special) Degree in Marketing ", "Bachelor of Medicine & Bachelor of Surgery", "Bachelor of Science (Speech & Hearing Sciences) ", "Bachelor of Science Honours in Computer Science Degree", "Bachelor of Engineering Technology (BET) Degree", "Bachelor of Information and Communication Technology (BICT) Degree" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year I", "Year II", "Year III", "Year IV" }));
+        Year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Year I", "Year II", "Year III", "Year IV" }));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Faculty : ");
@@ -122,18 +169,6 @@ public class StudentChooser extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, 0, 645, Short.MAX_VALUE)
-                    .addComponent(Faculty, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(62, 62, 62))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -141,11 +176,23 @@ public class StudentChooser extends javax.swing.JFrame {
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(416, 416, 416)
-                        .addComponent(selectItem))
+                        .addComponent(selectItem)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Year, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Degree, 0, 645, Short.MAX_VALUE)
+                            .addComponent(Faculty, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(62, 62, 62))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,11 +205,11 @@ public class StudentChooser extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Degree, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -365,9 +412,9 @@ public class StudentChooser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Degree;
     private javax.swing.JComboBox<String> Faculty;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> Year;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

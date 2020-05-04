@@ -51,7 +51,7 @@ public class AddStudent extends javax.swing.JFrame {
         fatherName = new javax.swing.JTextField();
         address = new javax.swing.JTextField();
         phone = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        submit = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -119,11 +119,11 @@ public class AddStudent extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/submit.png"))); // NOI18N
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/submit.png"))); // NOI18N
+        submit.setText("Submit");
+        submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                submitActionPerformed(evt);
             }
         });
 
@@ -201,7 +201,7 @@ public class AddStudent extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(182, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(submit)
                 .addGap(136, 136, 136)
                 .addComponent(jButton2)
                 .addGap(153, 153, 153))
@@ -290,7 +290,7 @@ public class AddStudent extends javax.swing.JFrame {
                     .addComponent(degree_programe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(submit)
                     .addComponent(jButton2))
                 .addGap(34, 34, 34))
         );
@@ -378,7 +378,7 @@ public class AddStudent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         try{
             stmt = conn.createStatement();
             String Name = name.getText();
@@ -406,7 +406,7 @@ public class AddStudent extends javax.swing.JFrame {
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_submitActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);
@@ -511,7 +511,6 @@ public class AddStudent extends javax.swing.JFrame {
     private javax.swing.JTextField email;
     private javax.swing.JTextField faculty;
     private javax.swing.JTextField fatherName;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -536,5 +535,6 @@ public class AddStudent extends javax.swing.JFrame {
     private javax.swing.JTextField nic;
     private javax.swing.JTextField phone;
     private javax.swing.JTextField studentnumber;
+    private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
 }
