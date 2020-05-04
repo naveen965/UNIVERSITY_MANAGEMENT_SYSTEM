@@ -83,7 +83,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
-    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,-69,0,0,3,104"/>
+    <SyntheticProperty name="formSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,-69,0,0,4,38"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="0"/>
     <SyntheticProperty name="generateSize" type="boolean" value="true"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
@@ -118,37 +118,65 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" pref="182" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jComboBox3" max="32767" attributes="0"/>
+                      <Component id="jComboBox2" alignment="0" pref="645" max="32767" attributes="0"/>
+                      <Component id="Faculty" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+              </Group>
               <Group type="102" attributes="0">
-                  <EmptySpace pref="107" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" alignment="0" pref="643" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="408" max="-2" attributes="0"/>
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="416" max="-2" attributes="0"/>
                           <Component id="selectItem" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="978" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="313" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" pref="60" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="266" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="285" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Faculty" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jComboBox2" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jComboBox3" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
                   <Component id="selectItem" min="-2" pref="87" max="-2" attributes="0"/>
-                  <EmptySpace pref="57" max="32767" attributes="0"/>
+                  <EmptySpace pref="245" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -162,38 +190,6 @@
             <Property name="text" type="java.lang.String" value="Choose Your Path"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTree" name="jTree">
-              <Properties>
-                <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-                  <TreeModel code="Faculties and Departments&#xa; Faculty of Humenities&#xa;  Department of English&#xa;  Department of English Language Teaching&#xa;  Depatrment of Fine Arts&#xa;   Visual Arts, Design &amp; Performing Arts Unit&#xa;   Drama &amp; Theatre and Image Arts Unit&#xa;  Department of Hindi&#xa;  Department of Linguistics&#xa;  Department of Modern Languages&#xa;  Department of Pali and Buddhist Studies&#xa;  Department of Sanskrit&#xa;  Department of Sinhala&#xa;  Department of Western Classical Culture &amp; Christian Culture&#xa; Faculty of Social Science&#xa;  Department of Archaelogy&#xa;  Department of Economics&#xa;  Department of Geography&#xa;  Department of History&#xa;  Department of Library and Information Science&#xa;  Department of Mass Communication&#xa;  Department of Philosophy&#xa;  Department of Sociology&#xa;  Department of Political Science&#xa;  Department of Social Statistics&#xa;  Department of International Studies&#xa;  Department of Sport Science and Physical Education&#xa; Faculty of Science&#xa;  Department of Plant and Molecular Biology&#xa;  Department of Chemistry&#xa;  Department of Industrial Management&#xa;  Department of Mathematics&#xa;  Department of Physics&#xa;  Department of Microbiology&#xa;  Department of Statistics &amp; Computer Science&#xa;  Department of Zoology and Environmental Management&#xa;  Department of Software Engineering Teaching Unit&#xa; Faculty of Commers and Management&#xa;  Department of Commerce &amp; Financial Management&#xa;  Department of Accountancy&#xa;  Department of Finance&#xa;  Department of Human Resource Management&#xa;  Department of Marketing Management&#xa; Faculty of Medicene&#xa;  Department of Anatomy&#xa;  Department of Biochemestry &amp; Clinical Chemestry&#xa;  Department of Disacility Studies&#xa;  Department of Family Medicine&#xa;  Department of Forensic Medicine&#xa;  Department of Medical Education&#xa;  Department of Medical Microbiology&#xa;  Department of Medicine&#xa;  Department of Obstetrics &amp; Gynecology&#xa;  Department of Paediatrics&#xa;  Department of Parasitology&#xa;  Department of Pathology&#xa;  Department of Pharmacology&#xa;  Department of Physicology&#xa;  Department of Psychiatry&#xa;  Department of Public Health&#xa;  Department of Surgery&#xa; Faculty of Computing and Technology&#xa;  Department of Applied Computing&#xa;  Department of Computer System Engineering&#xa;  Department of Software Engineering&#xa; Faculty of Graduate Studies"/>
-                </Property>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTree" name="jTree1">
-              <Properties>
-                <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-                  <TreeModel code="Degree and Year&#xa; Sinhala, Literary Criticism&#xa; English Language and Literature&#xa; Pali, Buddhist Culture, Buddhist Philosophy&#xa; Sanskrit, Vastu Vidya&#xa; Hindi&#xa; French, German, Russian, Japanese,Chinese, Korean&#xa; Linguistics, Translation Methods, Tamil,Tamil as a Second language&#xa; Western Classical Culture, Christian Culture&#xa; Teaching English as a Second language&#xa; Drama and Theatre, Image Arts (Photography, Television and Cinema)&#xa; Visual Arts (Arts, Computer Design),Performing Arts (Music, Dancing)&#xa; B.A (General Degree) In Anthropology&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa; B.A In Archeology &#xa;  B.A (General Degree) In Archeology &#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A (special Degree) In Archeology &#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A In Tourism and Museum Management  &#xa;  B.A (General Degree) In Tourism and Museum Management &#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A (special Degree) In Tourism and Museum Management &#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A In Economics &#xa;  B.A (General Degree) In Economics &#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A (Special Degree) In Economics&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A. Geography&#xa;  B.A. (General) Geography&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A. (Hons) Geography&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A. Development Studies&#xa;  B.A. (General) Development Studies&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A. (Hons) Development Studies&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A. History&#xa;  B.A. (General) History&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A. (Hons) History&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A. in International Studies&#xa;  B.A. (General) in International Studies&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A.  (Honors) in International Studies&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A. Degree Library and Information Science&#xa;  B.A. (General) Degree Library and Information Science&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A. (Special) Degree Library and Information Science&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A. Degree MACO &#xa;  B.A. (General) Degree MACO &#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A. ( Special) Degree MACO&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A. Degree PRMM&#xa;  B.A. (General) Degree PRMM&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A. ( Special) Degree PRMM&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A In Philosophy&#xa;  B.A (General Degree) In Philosophy&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A (Special Degree) In Philosophy&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A In Political Science&#xa;  B.A (General Degree) In Political Science&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A (Special Degree) In Political Science&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;   Year IV&#xa; B.A. in Sociology&#xa;  B.A. (General) in Sociology&#xa;   Year I&#xa;   Year II&#xa;   Year III&#xa;  B.A.  (Honours) in Sociology&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; B.A. Degree Social Statistics&#xa;  B.A. (General) Degree Social Statistics&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;  B.A. (Honours) Degree Social Statistics&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; B.A Degree Sport Science and Physical Education&#xa;  B.A (General) Degree Sport Science and Physical Education&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;  B.A (Special) Degree Sport Science and Physical Education&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Degree &#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa; Bachelor of Science Environmental Conservation and Management (ENCM)&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Physics and Electronics (PHEL)&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa; Bachelor of Science Honours in Biochemistry&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in chemistry&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Computer Studies&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Information Technology&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Mathematical Physics&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Microbiology&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in physics&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Statistics&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Botany&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Computer Science&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Environmental Conservation and Management (ENCM)&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Management and Information Technology (MIT)&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Mathematics&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Molecular Biology &amp; Plant Biotechnology&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Software Engineering (SENG)&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor of Science Honours in Zoology&#xa;   Year I&#xa;   Year II&#xa;   Year III &#xa;   Year IV&#xa; Bachelor  of Commerce (Special) Degree in Commerce&#xa; Bachelor  of Commerce (Special) Degree in Business Technology  &#xa; Bachelor  of Commerce (Special) Degree in Entrepreneurship&#xa; Bachelor  of Commerce (Special) Degree in Financial  Management&#xa; Bachelor  of Commerce (Special)  Degree External&#xa; Bachelor  of Business Management (Special) Degree in Accountancy&#xa; Bachelor  of Business Management (Special) Degree in Finance &#xa; Bachelor  of Business Management Honours in Financial Engineering&#xa; Bachelor  of Business Management Honours in Insurance&#xa; Bachelor  of Business Management Honours in Banking&#xa; Bachelor  of Business Management (Special) Degree in Human Resource Management&#xa; Bachelor  of Business Management (General) Degree External&#xa; Bachelor  of Business Management (Special) Degree in Marketing &#xa; Bachelor of Medicine &amp; Bachelor of Surgery&#xa; Bachelor of Science (Speech &amp; Hearing Sciences) &#xa; Bachelor of Science Honours in Computer Science Degree&#xa; Bachelor of Engineering Technology (BET) Degree&#xa; Bachelor of Information and Communication Technology (BICT) Degree"/>
-                </Property>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JButton" name="selectItem">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -211,6 +207,176 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectItemActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JComboBox" name="Faculty">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="7">
+                <StringItem index="0" value="Faculty of Humenities"/>
+                <StringItem index="1" value="Faculty of Social Science"/>
+                <StringItem index="2" value="Faculty of Science"/>
+                <StringItem index="3" value="Faculty of Commers and Management"/>
+                <StringItem index="4" value="Faculty of Medicene"/>
+                <StringItem index="5" value="Faculty of Computing and Technology"/>
+                <StringItem index="6" value="Faculty of Graduate Studies"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FacultyActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox2">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="79">
+                <StringItem index="0" value="Sinhala, Literary Criticism"/>
+                <StringItem index="1" value="English Language and Literature"/>
+                <StringItem index="2" value="Pali, Buddhist Culture, Buddhist Philosophy"/>
+                <StringItem index="3" value="Sanskrit, Vastu Vidya"/>
+                <StringItem index="4" value="Hindi"/>
+                <StringItem index="5" value="French, German, Russian, Japanese,Chinese, Korean"/>
+                <StringItem index="6" value="Linguistics, Translation Methods, Tamil,Tamil as a Second language"/>
+                <StringItem index="7" value="Western Classical Culture, Christian Culture"/>
+                <StringItem index="8" value="Teaching English as a Second language"/>
+                <StringItem index="9" value="Drama and Theatre, Image Arts (Photography, Television and Cinema)"/>
+                <StringItem index="10" value="Visual Arts (Arts, Computer Design),Performing Arts (Music, Dancing)"/>
+                <StringItem index="11" value="B.A (General Degree) In Anthropology"/>
+                <StringItem index="12" value="B.A (General Degree) In Archeology "/>
+                <StringItem index="13" value="B.A (special Degree) In Archeology "/>
+                <StringItem index="14" value="B.A (General Degree) In Tourism and Museum Management "/>
+                <StringItem index="15" value="B.A (special Degree) In Tourism and Museum Management "/>
+                <StringItem index="16" value="B.A (General Degree) In Economics "/>
+                <StringItem index="17" value="B.A (Special Degree) In Economics"/>
+                <StringItem index="18" value="B.A. (General) Geography"/>
+                <StringItem index="19" value="B.A. (Hons) Geography"/>
+                <StringItem index="20" value="B.A. (General) Development Studies"/>
+                <StringItem index="21" value="B.A. (Hons) Development Studies"/>
+                <StringItem index="22" value="B.A. (General) History"/>
+                <StringItem index="23" value="B.A. (Hons) History"/>
+                <StringItem index="24" value="B.A. (General) in International Studies"/>
+                <StringItem index="25" value="B.A.  (Honors) in International Studies"/>
+                <StringItem index="26" value="B.A. (General) Degree Library and Information Science"/>
+                <StringItem index="27" value="B.A. (Special) Degree Library and Information Science"/>
+                <StringItem index="28" value="B.A. (General) Degree MACO "/>
+                <StringItem index="29" value="B.A. ( Special) Degree MACO"/>
+                <StringItem index="30" value="B.A. (General) Degree PRMM"/>
+                <StringItem index="31" value="B.A. ( Special) Degree PRMM"/>
+                <StringItem index="32" value="B.A (General Degree) In Philosophy"/>
+                <StringItem index="33" value="B.A (Special Degree) In Philosophy"/>
+                <StringItem index="34" value="B.A (General Degree) In Political Science"/>
+                <StringItem index="35" value="B.A (Special Degree) In Political Science"/>
+                <StringItem index="36" value="B.A. (General) in Sociology"/>
+                <StringItem index="37" value="B.A.  (Honours) in Sociology"/>
+                <StringItem index="38" value="B.A. (General) Degree Social Statistics"/>
+                <StringItem index="39" value="B.A. (Honours) Degree Social Statistics"/>
+                <StringItem index="40" value="B.A (General) Degree Sport Science and Physical Education"/>
+                <StringItem index="41" value="B.A (Special) Degree Sport Science and Physical Education"/>
+                <StringItem index="42" value="Bachelor of Science Degree "/>
+                <StringItem index="43" value="Bachelor of Science Environmental Conservation and Management (ENCM)"/>
+                <StringItem index="44" value="Bachelor of Science Physics and Electronics (PHEL)"/>
+                <StringItem index="45" value="Bachelor of Science Honours in Biochemistry"/>
+                <StringItem index="46" value="Bachelor of Science Honours in chemistry"/>
+                <StringItem index="47" value="Bachelor of Science Honours in Computer Studies"/>
+                <StringItem index="48" value="Bachelor of Science Honours in Information Technology"/>
+                <StringItem index="49" value="Bachelor of Science Honours in Mathematical Physics"/>
+                <StringItem index="50" value="Bachelor of Science Honours in Microbiology"/>
+                <StringItem index="51" value="Bachelor of Science Honours in physics"/>
+                <StringItem index="52" value="Bachelor of Science Honours in Statistics"/>
+                <StringItem index="53" value="Bachelor of Science Honours in Botany"/>
+                <StringItem index="54" value="Bachelor of Science Honours in Computer Science"/>
+                <StringItem index="55" value="Bachelor of Science Honours in Environmental Conservation and Management (ENCM)"/>
+                <StringItem index="56" value="Bachelor of Science Honours in Management and Information Technology (MIT)"/>
+                <StringItem index="57" value="Bachelor of Science Honours in Mathematics"/>
+                <StringItem index="58" value="Bachelor of Science Honours in Molecular Biology &amp; Plant Biotechnology"/>
+                <StringItem index="59" value="Bachelor of Science Honours in Software Engineering (SENG)"/>
+                <StringItem index="60" value="Bachelor of Science Honours in Zoology"/>
+                <StringItem index="61" value="Bachelor  of Commerce (Special) Degree in Commerce"/>
+                <StringItem index="62" value="Bachelor  of Commerce (Special) Degree in Business Technology  "/>
+                <StringItem index="63" value="Bachelor  of Commerce (Special) Degree in Entrepreneurship"/>
+                <StringItem index="64" value="Bachelor  of Commerce (Special) Degree in Financial  Management"/>
+                <StringItem index="65" value="Bachelor  of Commerce (Special)  Degree External"/>
+                <StringItem index="66" value="Bachelor  of Business Management (Special) Degree in Accountancy"/>
+                <StringItem index="67" value="Bachelor  of Business Management (Special) Degree in Finance "/>
+                <StringItem index="68" value="Bachelor  of Business Management Honours in Financial Engineering"/>
+                <StringItem index="69" value="Bachelor  of Business Management Honours in Insurance"/>
+                <StringItem index="70" value="Bachelor  of Business Management Honours in Banking"/>
+                <StringItem index="71" value="Bachelor  of Business Management (Special) Degree in Human Resource Management"/>
+                <StringItem index="72" value="Bachelor  of Business Management (General) Degree External"/>
+                <StringItem index="73" value="Bachelor  of Business Management (Special) Degree in Marketing "/>
+                <StringItem index="74" value="Bachelor of Medicine &amp; Bachelor of Surgery"/>
+                <StringItem index="75" value="Bachelor of Science (Speech &amp; Hearing Sciences) "/>
+                <StringItem index="76" value="Bachelor of Science Honours in Computer Science Degree"/>
+                <StringItem index="77" value="Bachelor of Engineering Technology (BET) Degree"/>
+                <StringItem index="78" value="Bachelor of Information and Communication Technology (BICT) Degree"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox3">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Year I"/>
+                <StringItem index="1" value="Year II"/>
+                <StringItem index="2" value="Year III"/>
+                <StringItem index="3" value="Year IV"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Faculty : "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Degree Programe (Course) : "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Year :"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new DefaultTableModel()" type="code"/>
+                </Property>
+                <Property name="columnSelectionAllowed" type="boolean" value="true"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

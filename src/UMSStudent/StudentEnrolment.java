@@ -23,6 +23,7 @@ import javax.swing.JOptionPane;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import net.proteanit.sql.DbUtils;
 
@@ -61,15 +62,15 @@ public class StudentEnrolment extends javax.swing.JFrame {
     public void showRecord() {
         try {
             stmt = conn.createStatement();
-            jTree1.getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                DefaultMutableTreeNode year = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-                selectedLabel.setText(year.getUserObject().toString());
-            }
-            });
-            String year = selectedLabel.getText();
-            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = '"+year+"'";
+//            jTree1.getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
+//            @Override
+//            public void valueChanged(TreeSelectionEvent e) {
+//                DefaultMutableTreeNode year = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+//                selectedLabel.setText(year.getUserObject().toString());
+//            }
+//            });
+//            String year = selectedLabel.getText();
+            String sql = "SELECT Semester, Coursecode_and_Subject, Select_Courses FROM `enrolment` WHERE year = 'Year I'";
             rs = stmt.executeQuery(sql);
             DefaultTableModel model = new DefaultTableModel()
             {
@@ -94,7 +95,7 @@ public class StudentEnrolment extends javax.swing.JFrame {
 
             model.addColumn("Semester");
             model.addColumn("Course");
-            model.addColumn("Enroll");
+            model.addColumn("Select Courses");
             
             int i = 0;
             while(rs.next()) {
@@ -140,10 +141,15 @@ public class StudentEnrolment extends javax.swing.JFrame {
 
         jTable1.setModel(new DefaultTableModel());
         jTable1.setColumnSelectionAllowed(true);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        btn.setText("Select");
+        btn.setText("Enroll");
         btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActionPerformed(evt);
@@ -830,27 +836,36 @@ public class StudentEnrolment extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
-//        try{
-//            stmt = conn.createStatement();
-//
-//            String Year = year.getText();
-//
-//            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = '"+Year+"'";
-//
-//            stmt.executeUpdate(sql);
-//            
-//            if(rs.next()){
-//                year.setText(rs.getString("Name"));
-//            }
-//            else{
-//                JOptionPane.showMessageDialog(null, "Record Not Found");
-//            }
-//
-//        }
-//        catch(HeadlessException | NumberFormatException | SQLException e){
-//            JOptionPane.showMessageDialog(null, e);
+        try{
+            stmt = conn.createStatement();
+            int i = jTable1.getSelectedRow();
+            int selectedRowIndex = jTable1.getSelectedRow();
+            DefaultTableModel Semester = (DefaultTableModel) jTable1.getModel();
+
+            String sql = "INSERT INTO `enroled` (`Semester`, `Coursecode_and_Subject`) VALUE ('"+Semester+"', 'sdfs')";
+
+            int result = stmt.executeUpdate(sql);
+            //System.out.println(result);
+            if(result == 1){
+                JOptionPane.showMessageDialog(null, "Registration Succeed");
+                setVisible(false);
+                Home object = new Home();
+                object.setVisible(true);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Registration Unsuccessful");
+            }
+
+        }
+        catch(HeadlessException | NumberFormatException | SQLException e){
+            JOptionPane.showMessageDialog(null, e);
+        }
 //        }
     }//GEN-LAST:event_btnActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
