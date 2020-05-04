@@ -48,13 +48,17 @@ public class StudentChooser extends javax.swing.JFrame {
         super("Student Enrolment");
         initComponents();
         connection = DatabaseConnection.connection();
+        showRecord();
     }
     
     public void showRecord() {
         try {
+            connection = DatabaseConnection.connection();
             statement = connection.createStatement();
-            String sql = "SELECT Semester, Coursecode_and_Subject, Select_Courses FROM `enrolment` WHERE "
-                    + "Year = 'Year I' , Faculty = 'Faculty of Science' ,Degree_programe = 'Bachelor of Science Honours in Software Engineering (SENG)'";
+            String faculty = (String) Faculty.getSelectedItem();
+            String degree = (String) Degree.getSelectedItem();
+            String year = (String) Year.getSelectedItem();
+            String sql = "SELECT Semester, Coursecode_and_Subject, Select_Courses FROM `enrolment` WHERE Year = '"+year+"' AND Faculty = '"+faculty+"' AND Degree_programe = '"+degree+"' ORDER BY Semester ASC";
             resultSet = statement.executeQuery(sql);
             DefaultTableModel model = new DefaultTableModel()
             {
@@ -79,7 +83,7 @@ public class StudentChooser extends javax.swing.JFrame {
 
             model.addColumn("Semester");
             model.addColumn("Course");
-            model.addColumn("Select Courses");
+            model.addColumn("Enroll");
             
             int i = 0;
             while(resultSet.next()) {
@@ -169,15 +173,6 @@ public class StudentChooser extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(408, 408, 408)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(416, 416, 416)
-                        .addComponent(selectItem)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -193,6 +188,15 @@ public class StudentChooser extends javax.swing.JFrame {
                             .addComponent(Degree, 0, 645, Short.MAX_VALUE)
                             .addComponent(Faculty, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(62, 62, 62))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(408, 408, 408)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(423, 423, 423)
+                        .addComponent(selectItem)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,9 +217,9 @@ public class StudentChooser extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(49, 49, 49)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(131, 131, 131)
+                .addGap(88, 88, 88)
                 .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(288, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -309,50 +313,53 @@ public class StudentChooser extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void selectItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectItemActionPerformed
-        try {
-            connection = DatabaseConnection.connection();
-            statement = connection.createStatement();
-            String sql = "SELECT semester, course_units, enroll FROM `degree&course_units` WHERE year = 'Year I'";
-            resultSet = statement.executeQuery(sql);
-            DefaultTableModel model = new DefaultTableModel()
-            {
-                public Class<?> getColumnClass(int column)
-                {
-                    switch(column)
-                    {
-                        case 0:
-                            return String.class;
-                        case 1:
-                            return String.class;
-                        case 2:
-                            return Boolean.class;
-                        default:
-                            return String.class;
-                    }
-                }
-            };
-
-            //ASSIGN THE MODEL TO TABLE
-            jTable1.setModel(model);
-
-            model.addColumn("Semester");
-            model.addColumn("Course");
-            model.addColumn("Enroll");
-            
-            int i = 0;
-            while(resultSet.next()) {
-                model.addRow(new Object[0]);
-                model.setValueAt(resultSet.getString(1), i, 0);
-                model.setValueAt(resultSet.getString(2), i, 1);
-                model.setValueAt(resultSet.getBoolean(3),i,2);
-                i++;
-            }
-
-
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        try {
+//            connection = DatabaseConnection.connection();
+//            statement = connection.createStatement();
+//            String faculty = (String) Faculty.getSelectedItem();
+//            String degree = (String) Degree.getSelectedItem();
+//            String year = (String) Year.getSelectedItem();
+//            String sql = "SELECT Semester, Coursecode_and_Subject, Select_Courses FROM `enrolment` WHERE Year = '"+year+"' AND Faculty = '"+faculty+"' AND Degree_programe = '"+degree+"' ORDER BY Semester ASC";
+//            resultSet = statement.executeQuery(sql);
+//            DefaultTableModel model = new DefaultTableModel()
+//            {
+//                public Class<?> getColumnClass(int column)
+//                {
+//                    switch(column)
+//                    {
+//                        case 0:
+//                            return String.class;
+//                        case 1:
+//                            return String.class;
+//                        case 2:
+//                            return Boolean.class;
+//                        default:
+//                            return String.class;
+//                    }
+//                }
+//            };
+//
+//            //ASSIGN THE MODEL TO TABLE
+//            jTable1.setModel(model);
+//
+//            model.addColumn("Semester");
+//            model.addColumn("Course");
+//            model.addColumn("Enroll");
+//            
+//            int i = 0;
+//            while(resultSet.next()) {
+//                model.addRow(new Object[0]);
+//                model.setValueAt(resultSet.getString(1), i, 0);
+//                model.setValueAt(resultSet.getString(2), i, 1);
+//                model.setValueAt(resultSet.getBoolean(3),i,2);
+//                i++;
+//            }
+//
+//
+//        }
+//        catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//        }
     }//GEN-LAST:event_selectItemActionPerformed
 
     private void FacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacultyActionPerformed
