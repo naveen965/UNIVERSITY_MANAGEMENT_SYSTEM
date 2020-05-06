@@ -48,7 +48,6 @@ public class StudentChooser extends javax.swing.JFrame {
         super("Student Enrolment");
         initComponents();
         connection = DatabaseConnection.connection();
-        showRecord();
     }
     
     public void showRecord() {
@@ -165,8 +164,10 @@ public class StudentChooser extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Year :");
 
+        jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 51, 255), java.awt.Color.white, java.awt.Color.white));
         jTable1.setModel(new DefaultTableModel());
         jTable1.setColumnSelectionAllowed(true);
+        jTable1.setSurrendersFocusOnKeystroke(true);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -194,8 +195,8 @@ public class StudentChooser extends javax.swing.JFrame {
                         .addGap(408, 408, 408)
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(423, 423, 423)
-                        .addComponent(selectItem)))
+                        .addGap(425, 425, 425)
+                        .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -215,11 +216,11 @@ public class StudentChooser extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
+                .addGap(36, 36, 36)
                 .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(145, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -283,7 +284,7 @@ public class StudentChooser extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1062, 955));
+        setSize(new java.awt.Dimension(1062, 1043));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -313,53 +314,7 @@ public class StudentChooser extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void selectItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectItemActionPerformed
-//        try {
-//            connection = DatabaseConnection.connection();
-//            statement = connection.createStatement();
-//            String faculty = (String) Faculty.getSelectedItem();
-//            String degree = (String) Degree.getSelectedItem();
-//            String year = (String) Year.getSelectedItem();
-//            String sql = "SELECT Semester, Coursecode_and_Subject, Select_Courses FROM `enrolment` WHERE Year = '"+year+"' AND Faculty = '"+faculty+"' AND Degree_programe = '"+degree+"' ORDER BY Semester ASC";
-//            resultSet = statement.executeQuery(sql);
-//            DefaultTableModel model = new DefaultTableModel()
-//            {
-//                public Class<?> getColumnClass(int column)
-//                {
-//                    switch(column)
-//                    {
-//                        case 0:
-//                            return String.class;
-//                        case 1:
-//                            return String.class;
-//                        case 2:
-//                            return Boolean.class;
-//                        default:
-//                            return String.class;
-//                    }
-//                }
-//            };
-//
-//            //ASSIGN THE MODEL TO TABLE
-//            jTable1.setModel(model);
-//
-//            model.addColumn("Semester");
-//            model.addColumn("Course");
-//            model.addColumn("Enroll");
-//            
-//            int i = 0;
-//            while(resultSet.next()) {
-//                model.addRow(new Object[0]);
-//                model.setValueAt(resultSet.getString(1), i, 0);
-//                model.setValueAt(resultSet.getString(2), i, 1);
-//                model.setValueAt(resultSet.getBoolean(3),i,2);
-//                i++;
-//            }
-//
-//
-//        }
-//        catch(Exception e){
-//            JOptionPane.showMessageDialog(null, e);
-//        }
+        showRecord();
     }//GEN-LAST:event_selectItemActionPerformed
 
     private void FacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacultyActionPerformed
