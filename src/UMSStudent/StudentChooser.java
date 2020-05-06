@@ -120,6 +120,7 @@ public class StudentChooser extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btn = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -164,11 +165,20 @@ public class StudentChooser extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Year :");
 
-        jTable1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 51, 255), java.awt.Color.white, java.awt.Color.white));
+        jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setModel(new DefaultTableModel());
         jTable1.setColumnSelectionAllowed(true);
         jTable1.setSurrendersFocusOnKeystroke(true);
         jScrollPane1.setViewportView(jTable1);
+
+        btn.setFont(new java.awt.Font("Tekton Pro", 1, 20)); // NOI18N
+        btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ic_launcher.png"))); // NOI18N
+        btn.setText("Enroll");
+        btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -189,14 +199,18 @@ public class StudentChooser extends javax.swing.JFrame {
                             .addComponent(Degree, 0, 645, Short.MAX_VALUE)
                             .addComponent(Faculty, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(62, 62, 62))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(422, 422, 422))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(408, 408, 408)
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(425, 425, 425)
-                        .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(424, 424, 424)
+                        .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -216,11 +230,13 @@ public class StudentChooser extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Year, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -284,7 +300,7 @@ public class StudentChooser extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1062, 1043));
+        setSize(new java.awt.Dimension(1062, 1070));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -318,24 +334,21 @@ public class StudentChooser extends javax.swing.JFrame {
     }//GEN-LAST:event_selectItemActionPerformed
 
     private void FacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacultyActionPerformed
-//        try {
-//            connection = DatabaseConnection.connection();
-//            statement = connection.createStatement();
-//            String sql = "SELECT course_units FROM `degree&course_units` WHERE year = 'Year I'";
-//            resultSet = statement.executeQuery(sql);
-//            if(resultSet.next()){
-//                setVisible(false);
-//                Home object = new Home();
-//                object.setVisible(true);
-//            }
-//            else{
-//                JOptionPane.showMessageDialog(null, "Email or Password is Invalid");
-//            }
-//            
-//        } catch (SQLException ex) {
-//            Logger.getLogger(StudentChooser.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }//GEN-LAST:event_FacultyActionPerformed
+
+    private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
+        for(int i=0;i<jTable1.getRowCount();i++)
+        {
+          Boolean checked=Boolean.valueOf(jTable1.getValueAt(i, 0).toString());
+          String col = jTable1.getValueAt(i, 1).toString();
+
+          //DISPLAY
+          if(checked)
+          {
+            JOptionPane.showMessageDialog(null, col);
+          }
+        }
+    }//GEN-LAST:event_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,6 +390,7 @@ public class StudentChooser extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Degree;
     private javax.swing.JComboBox<String> Faculty;
     private javax.swing.JComboBox<String> Year;
+    private javax.swing.JButton btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
