@@ -339,7 +339,7 @@ public class StudentChooser extends javax.swing.JFrame {
     private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
         for(int i=0;i<jTable1.getRowCount();i++)
         {
-          Boolean checked=Boolean.valueOf(jTable1.getValueAt(i, 0).toString());
+          Boolean checked=Boolean.valueOf(jTable1.getValueAt(i, 2).toString());
           String col = jTable1.getValueAt(i, 1).toString();
 
           //DISPLAY

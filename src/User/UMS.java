@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UniversityManagementSystem;
+package User;
 
+import User.Main;
 import DBconnection.DatabaseConnection;
 import static com.sun.glass.ui.Cursor.setVisible;
 
@@ -21,7 +22,7 @@ public class UMS {
     public static void main(String[] args) {
         DatabaseConnection databaseconnection = new DatabaseConnection();
         DatabaseConnection.connection();
-        Main welcome = new Main();
+        AdminOrStudent welcome = new AdminOrStudent();
         welcome.setVisible(true);
     }
 }

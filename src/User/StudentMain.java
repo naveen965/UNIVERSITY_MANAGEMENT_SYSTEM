@@ -3,20 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UniversityManagementSystem;
+package User;
 
+import UMSStudent.StudentLogin;
+import UMSStudent.StudentSignup;
 import javax.swing.ImageIcon;
 
 /**
  *
  * @author Naveen Rajasekara
  */
-public class Main extends javax.swing.JFrame {
+public class StudentMain extends javax.swing.JFrame {
 
     /**
-     * Creates new form Main
+     * Creates new form StudentMain
      */
-    public Main() {
+    public StudentMain() {
         initComponents();
     }
 
@@ -29,7 +31,6 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         signUp = new javax.swing.JButton();
         signin = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -37,9 +38,6 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-
-        jPanel1.setLayout(null);
 
         signUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signupmouseexit.png"))); // NOI18N
         signUp.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,8 +62,6 @@ public class Main extends javax.swing.JFrame {
                 signUpActionPerformed(evt);
             }
         });
-        jPanel1.add(signUp);
-        signUp.setBounds(670, 450, 170, 80);
 
         signin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signinmouseexit.png"))); // NOI18N
         signin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,8 +86,6 @@ public class Main extends javax.swing.JFrame {
                 signinActionPerformed(evt);
             }
         });
-        jPanel1.add(signin);
-        signin.setBounds(230, 450, 170, 80);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main1.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,8 +96,6 @@ public class Main extends javax.swing.JFrame {
                 jLabel3MouseExited(evt);
             }
         });
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(100, 80, 430, 550);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main2.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,37 +106,58 @@ public class Main extends javax.swing.JFrame {
                 jLabel2MouseExited(evt);
             }
         });
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(560, 80, 400, 550);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Main.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 1110, 700);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
+            .addGap(0, 1100, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(130, 130, 130)
+                            .addComponent(signin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(30, 30, 30)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(110, 110, 110)
+                            .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(370, 370, 370)
+                                    .addComponent(signin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(370, 370, 370)
+                                    .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(90, 90, 90)
+                    .addComponent(jLabel3)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        setSize(new java.awt.Dimension(1103, 727));
-        setLocationRelativeTo(null);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/sign.png"));
-        jLabel2.setIcon(II);
-    }//GEN-LAST:event_jLabel2MouseEntered
-
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/main2.png"));
-        jLabel2.setIcon(II);
-    }//GEN-LAST:event_jLabel2MouseExited
 
     private void signUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseClicked
         ImageIcon II = new ImageIcon(getClass().getResource("/Images/signupbuttonclick.png"));
@@ -172,6 +185,12 @@ public class Main extends javax.swing.JFrame {
         ImageIcon II = new ImageIcon(getClass().getResource("/Images/signupmouseexit.png"));
         signUp.setIcon(II);
     }//GEN-LAST:event_signUpMouseReleased
+
+    private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
+        setVisible(false);
+        StudentSignup object = new StudentSignup();
+        object.setVisible(true);
+    }//GEN-LAST:event_signUpActionPerformed
 
     private void signinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseClicked
         ImageIcon II = new ImageIcon(getClass().getResource("/Images/signinbuttonclick.png"));
@@ -202,7 +221,7 @@ public class Main extends javax.swing.JFrame {
 
     private void signinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinActionPerformed
         setVisible(false);
-        Login object = new Login();
+        StudentLogin object = new StudentLogin();
         object.setVisible(true);
     }//GEN-LAST:event_signinActionPerformed
 
@@ -216,11 +235,15 @@ public class Main extends javax.swing.JFrame {
         jLabel3.setIcon(II);
     }//GEN-LAST:event_jLabel3MouseExited
 
-    private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
-        setVisible(false);
-        SignUp object = new SignUp();
-        object.setVisible(true);
-    }//GEN-LAST:event_signUpActionPerformed
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        ImageIcon II = new ImageIcon(getClass().getResource("/Images/sign.png"));
+        jLabel2.setIcon(II);
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        ImageIcon II = new ImageIcon(getClass().getResource("/Images/main2.png"));
+        jLabel2.setIcon(II);
+    }//GEN-LAST:event_jLabel2MouseExited
 
     /**
      * @param args the command line arguments
@@ -239,20 +262,20 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new StudentMain().setVisible(true);
             }
         });
     }
@@ -261,7 +284,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton signUp;
     private javax.swing.JButton signin;
     // End of variables declaration//GEN-END:variables
