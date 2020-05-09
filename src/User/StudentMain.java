@@ -31,35 +31,31 @@ public class StudentMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        signUp = new javax.swing.JButton();
-        signin = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        signin = new javax.swing.JButton();
+        signUp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        signUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signupmouseexit.png"))); // NOI18N
-        signUp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signUpMouseClicked(evt);
-            }
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main1.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                signUpMouseEntered(evt);
+                jLabel3MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                signUpMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                signUpMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                signUpMouseReleased(evt);
+                jLabel3MouseExited(evt);
             }
         });
-        signUp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signUpActionPerformed(evt);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main2.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
             }
         });
 
@@ -87,27 +83,29 @@ public class StudentMain extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main1.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        signUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signupmouseexit.png"))); // NOI18N
+        signUp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signUpMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
+                signUpMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
+                signUpMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                signUpMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                signUpMouseReleased(evt);
             }
         });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main2.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel2MouseExited(evt);
+        signUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signUpActionPerformed(evt);
             }
         });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Main.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,10 +146,9 @@ public class StudentMain extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(450, 450, 450)
-                            .addComponent(signin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(450, 450, 450)
-                            .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(signin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
