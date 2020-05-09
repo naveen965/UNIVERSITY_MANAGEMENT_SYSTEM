@@ -31,215 +31,154 @@ public class StudentMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        signin1 = new javax.swing.JButton();
+        signUp1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        signin = new javax.swing.JButton();
-        signUp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main1.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
-            }
-        });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main2.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel2MouseExited(evt);
-            }
-        });
-
-        signin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signinmouseexit.png"))); // NOI18N
-        signin.addMouseListener(new java.awt.event.MouseAdapter() {
+        signin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signinmouseexit.png"))); // NOI18N
+        signin1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signinMouseClicked(evt);
+                signin1MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                signinMouseEntered(evt);
+                signin1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                signinMouseExited(evt);
+                signin1MouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                signinMousePressed(evt);
+                signin1MousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                signinMouseReleased(evt);
+                signin1MouseReleased(evt);
             }
         });
-        signin.addActionListener(new java.awt.event.ActionListener() {
+        signin1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signinActionPerformed(evt);
+                signin1ActionPerformed(evt);
             }
         });
 
-        signUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signupmouseexit.png"))); // NOI18N
-        signUp.addMouseListener(new java.awt.event.MouseAdapter() {
+        signUp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/signupmouseexit.png"))); // NOI18N
+        signUp1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signUpMouseClicked(evt);
+                signUp1MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                signUpMouseEntered(evt);
+                signUp1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                signUpMouseExited(evt);
+                signUp1MouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                signUpMousePressed(evt);
+                signUp1MousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                signUpMouseReleased(evt);
+                signUp1MouseReleased(evt);
             }
         });
-        signUp.addActionListener(new java.awt.event.ActionListener() {
+        signUp1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signUpActionPerformed(evt);
+                signUp1ActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(246, 246, 246)
+                .addComponent(signin1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addComponent(signUp1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(285, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(signUp1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(signin1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(215, 215, 215))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(jLabel3)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(signin, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(270, 270, 270)
-                    .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE))
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jLabel1)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jLabel2)))
-                .addContainerGap(86, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(450, 450, 450)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(signin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(522, 522, 522)
+                .addComponent(jLabel1)
+                .addContainerGap(142, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void signUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseClicked
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signupbuttonclick.png"));
-        signUp.setIcon(II);
-    }//GEN-LAST:event_signUpMouseClicked
+    private void signin1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signin1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signin1MouseClicked
 
-    private void signUpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseEntered
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signup-default.png"));
-        signUp.setIcon(II);
-        ImageIcon II1 = new ImageIcon(getClass().getResource("/Images/sign.png"));
-        jLabel2.setIcon(II1);
-    }//GEN-LAST:event_signUpMouseEntered
+    private void signin1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signin1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signin1MouseEntered
 
-    private void signUpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseExited
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signupmouseexit.png"));
-        signUp.setIcon(II);
-    }//GEN-LAST:event_signUpMouseExited
+    private void signin1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signin1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signin1MouseExited
 
-    private void signUpMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMousePressed
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signupbuttonclick.png"));
-        signUp.setIcon(II);
-    }//GEN-LAST:event_signUpMousePressed
+    private void signin1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signin1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signin1MousePressed
 
-    private void signUpMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpMouseReleased
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signupmouseexit.png"));
-        signUp.setIcon(II);
-    }//GEN-LAST:event_signUpMouseReleased
+    private void signin1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signin1MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signin1MouseReleased
 
-    private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
+    private void signin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signin1ActionPerformed
         setVisible(false);
-        StudentSignup object = new StudentSignup();
-        object.setVisible(true);
-    }//GEN-LAST:event_signUpActionPerformed
+        StudentLogin studentLogin = new StudentLogin();
+        studentLogin.setVisible(true);
+    }//GEN-LAST:event_signin1ActionPerformed
 
-    private void signinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseClicked
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signinbuttonclick.png"));
-        signin.setIcon(II);
-    }//GEN-LAST:event_signinMouseClicked
+    private void signUp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUp1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signUp1MouseClicked
 
-    private void signinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseEntered
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signin-default.png"));
-        signin.setIcon(II);
-        ImageIcon II1 = new ImageIcon(getClass().getResource("/Images/log.png"));
-        jLabel3.setIcon(II1);
-    }//GEN-LAST:event_signinMouseEntered
+    private void signUp1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUp1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signUp1MouseEntered
 
-    private void signinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseExited
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signinmouseexit.png"));
-        signin.setIcon(II);
-    }//GEN-LAST:event_signinMouseExited
+    private void signUp1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUp1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signUp1MouseExited
 
-    private void signinMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMousePressed
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signinbuttonclick.png"));
-        signin.setIcon(II);
-    }//GEN-LAST:event_signinMousePressed
+    private void signUp1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUp1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signUp1MousePressed
 
-    private void signinMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signinMouseReleased
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/signinmouseexit.png"));
-        signin.setIcon(II);
-    }//GEN-LAST:event_signinMouseReleased
+    private void signUp1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUp1MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signUp1MouseReleased
 
-    private void signinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinActionPerformed
+    private void signUp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUp1ActionPerformed
         setVisible(false);
-        StudentLogin object = new StudentLogin();
-        object.setVisible(true);
-    }//GEN-LAST:event_signinActionPerformed
-
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/log.png"));
-        jLabel3.setIcon(II);
-    }//GEN-LAST:event_jLabel3MouseEntered
-
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/main1.png"));
-        jLabel3.setIcon(II);
-    }//GEN-LAST:event_jLabel3MouseExited
-
-    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/sign.png"));
-        jLabel2.setIcon(II);
-    }//GEN-LAST:event_jLabel2MouseEntered
-
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        ImageIcon II = new ImageIcon(getClass().getResource("/Images/main2.png"));
-        jLabel2.setIcon(II);
-    }//GEN-LAST:event_jLabel2MouseExited
+        StudentSignup studentSignup = new StudentSignup();
+        studentSignup.setVisible(true);
+    }//GEN-LAST:event_signUp1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,9 +217,8 @@ public class StudentMain extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton signUp;
-    private javax.swing.JButton signin;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton signUp1;
+    private javax.swing.JButton signin1;
     // End of variables declaration//GEN-END:variables
 }
