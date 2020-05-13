@@ -5,6 +5,7 @@ import DBconnection.DatabaseConnection;
 import UniversityManagementSystem.About;
 import UniversityManagementSystem.Home;
 import UniversityManagementSystem.Login;
+import User.StudentMain;
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
@@ -34,17 +35,17 @@ import javax.swing.tree.TreeSelectionModel;
  *
  * @author Naveen Rajasekara
  */
-public class StudentChooser extends javax.swing.JFrame {
+public class StudentEnrollment extends javax.swing.JFrame {
 
     /**
-     * Creates new form StudentChooser
+     * Creates new form StudentEnrollment
      */
     
     Connection connection = null;
     Statement statement = null;
     ResultSet resultSet = null;    
     
-    public StudentChooser() {
+    public StudentEnrollment() {
         super("Student Enrolment");
         initComponents();
         connection = DatabaseConnection.connection();
@@ -120,7 +121,8 @@ public class StudentChooser extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btn = new javax.swing.JButton();
+        enroll = new javax.swing.JButton();
+        back2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -171,12 +173,20 @@ public class StudentChooser extends javax.swing.JFrame {
         jTable1.setSurrendersFocusOnKeystroke(true);
         jScrollPane1.setViewportView(jTable1);
 
-        btn.setFont(new java.awt.Font("Tekton Pro", 1, 20)); // NOI18N
-        btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ic_launcher.png"))); // NOI18N
-        btn.setText("Enroll");
-        btn.addActionListener(new java.awt.event.ActionListener() {
+        enroll.setFont(new java.awt.Font("Tekton Pro", 1, 20)); // NOI18N
+        enroll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ic_launcher.png"))); // NOI18N
+        enroll.setText("Enroll");
+        enroll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActionPerformed(evt);
+                enrollActionPerformed(evt);
+            }
+        });
+
+        back2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/back.png"))); // NOI18N
+        back2.setText("Back");
+        back2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back2ActionPerformed(evt);
             }
         });
 
@@ -199,10 +209,6 @@ public class StudentChooser extends javax.swing.JFrame {
                             .addComponent(Degree, 0, 645, Short.MAX_VALUE)
                             .addComponent(Faculty, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(62, 62, 62))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(422, 422, 422))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -210,7 +216,12 @@ public class StudentChooser extends javax.swing.JFrame {
                         .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(424, 424, 424)
-                        .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addComponent(enroll, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140)
+                        .addComponent(back2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -234,9 +245,11 @@ public class StudentChooser extends javax.swing.JFrame {
                 .addComponent(selectItem, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(btn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(enroll, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                    .addComponent(back2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -336,7 +349,7 @@ public class StudentChooser extends javax.swing.JFrame {
     private void FacultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacultyActionPerformed
     }//GEN-LAST:event_FacultyActionPerformed
 
-    private void btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActionPerformed
+    private void enrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollActionPerformed
         for(int i=0;i<jTable1.getRowCount();i++)
         {
           Boolean checked=Boolean.valueOf(jTable1.getValueAt(i, 2).toString());
@@ -348,7 +361,13 @@ public class StudentChooser extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, col);
           }
         }
-    }//GEN-LAST:event_btnActionPerformed
+    }//GEN-LAST:event_enrollActionPerformed
+
+    private void back2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back2ActionPerformed
+        setVisible(false);
+        StudentMain object = new StudentMain();
+        object.setVisible(true);
+    }//GEN-LAST:event_back2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,21 +386,23 @@ public class StudentChooser extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StudentChooser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentEnrollment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StudentChooser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentEnrollment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StudentChooser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentEnrollment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StudentChooser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentEnrollment.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentChooser().setVisible(true);
+                new StudentEnrollment().setVisible(true);
             }
         });
     }
@@ -390,7 +411,10 @@ public class StudentChooser extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Degree;
     private javax.swing.JComboBox<String> Faculty;
     private javax.swing.JComboBox<String> Year;
-    private javax.swing.JButton btn;
+    private javax.swing.JButton back;
+    private javax.swing.JButton back1;
+    private javax.swing.JButton back2;
+    private javax.swing.JButton enroll;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
