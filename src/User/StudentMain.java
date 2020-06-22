@@ -5,6 +5,8 @@
  */
 package User;
 
+import UMSStudent.StudentLogin;
+import UMSStudent.StudentSignup;
 import UniversityManagementSystem.Login;
 import UniversityManagementSystem.SignUp;
 import javax.swing.ImageIcon;
@@ -37,6 +39,7 @@ public class StudentMain extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -123,6 +126,16 @@ public class StudentMain extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 1090, 700);
 
+        jTextField1.setFont(new java.awt.Font("Tekton Pro Cond", 1, 48)); // NOI18N
+        jTextField1.setText("University Management System");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(289, 30, 520, 50);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -204,7 +217,7 @@ public class StudentMain extends javax.swing.JFrame {
 
     private void signinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinActionPerformed
         setVisible(false);
-        Login object = new Login();
+        StudentLogin object = new StudentLogin();
         object.setVisible(true);
     }//GEN-LAST:event_signinActionPerformed
 
@@ -220,9 +233,13 @@ public class StudentMain extends javax.swing.JFrame {
 
     private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
         setVisible(false);
-        SignUp object = new SignUp();
+        StudentSignup object = new StudentSignup();
         object.setVisible(true);
     }//GEN-LAST:event_signUpActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,6 +282,7 @@ public class StudentMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton signUp;
     private javax.swing.JButton signin;
     // End of variables declaration//GEN-END:variables
