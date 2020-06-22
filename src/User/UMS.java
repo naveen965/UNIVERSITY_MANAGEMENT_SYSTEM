@@ -5,7 +5,7 @@
  */
 package User;
 
-import User.Main;
+import User.StudentMain;
 import DBconnection.DatabaseConnection;
 import static com.sun.glass.ui.Cursor.setVisible;
 

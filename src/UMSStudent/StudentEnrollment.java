@@ -5,7 +5,7 @@ import DBconnection.DatabaseConnection;
 import UniversityManagementSystem.About;
 import UniversityManagementSystem.Home;
 import UniversityManagementSystem.Login;
-import User.StudentMain222;
+import User.AdminMain;
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
@@ -365,7 +365,7 @@ public class StudentEnrollment extends javax.swing.JFrame {
 
     private void back2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back2ActionPerformed
         setVisible(false);
-        StudentMain222 object = new StudentMain222();
+        AdminMain object = new AdminMain();
         object.setVisible(true);
     }//GEN-LAST:event_back2ActionPerformed
 

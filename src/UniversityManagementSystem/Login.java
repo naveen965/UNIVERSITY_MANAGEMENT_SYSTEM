@@ -5,7 +5,7 @@
  */
 package UniversityManagementSystem;
 
-import User.Main;
+import User.StudentMain;
 import DBconnection.DatabaseConnection;
 import Exit.Exit;
 import java.awt.HeadlessException;
@@ -201,7 +201,7 @@ public class Login extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
-        Main object = new Main();
+        StudentMain object = new StudentMain();
         object.setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
