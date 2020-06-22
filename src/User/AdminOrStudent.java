@@ -146,7 +146,7 @@ public class AdminOrStudent extends javax.swing.JFrame {
 
     private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
         setVisible(false);
-        StudentMain object = new StudentMain();
+        StudentMain222 object = new StudentMain222();
         object.setVisible(true);
     }//GEN-LAST:event_signUpActionPerformed
 
