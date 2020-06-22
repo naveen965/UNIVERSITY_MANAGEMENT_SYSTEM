@@ -5,7 +5,7 @@ import DBconnection.DatabaseConnection;
 import UniversityManagementSystem.About;
 import UniversityManagementSystem.Home;
 import UniversityManagementSystem.Login;
-import User.AdminMain;
+import UserAdmin.AdminMain;
 import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;

@@ -3,26 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package User;
+package UserStudent;
 
-import User.StudentMain;
 import DBconnection.DatabaseConnection;
+import UserAdmin.AdminMain;
 import static com.sun.glass.ui.Cursor.setVisible;
 
 /**
  *
  * @author Naveen Rajasekara
  */
-
-public class UMS {
-
-    /**
-     * @param args the command line arguments
-     */
+public class UniversityStudent {
     public static void main(String[] args) {
         DatabaseConnection databaseconnection = new DatabaseConnection();
         DatabaseConnection.connection();
-        AdminOrStudent welcome = new AdminOrStudent();
+        StudentMain welcome = new StudentMain();
         welcome.setVisible(true);
     }
 }

@@ -19,7 +19,7 @@ import UniversityManagementSystem.ShowAdmin;
 import UniversityManagementSystem.ShowStudent;
 import UniversityManagementSystem.SignUp;
 import UniversityManagementSystem.Student;
-import User.UMS;
+import UserAdmin.UMS;
 
 /**
  *

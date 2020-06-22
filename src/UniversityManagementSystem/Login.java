@@ -5,7 +5,7 @@
  */
 package UniversityManagementSystem;
 
-import User.StudentMain;
+import UserStudent.StudentMain;
 import DBconnection.DatabaseConnection;
 import Exit.Exit;
 import java.awt.HeadlessException;
