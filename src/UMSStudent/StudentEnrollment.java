@@ -360,6 +360,10 @@ public class StudentEnrollment extends javax.swing.JFrame {
           {
             JOptionPane.showMessageDialog(null, col);
           }
+          else {
+              JOptionPane.showMessageDialog(null, "You Must Select any course");
+              break;
+          }
         }
     }//GEN-LAST:event_enrollActionPerformed
 
