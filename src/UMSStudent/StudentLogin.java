@@ -168,7 +168,7 @@ public class StudentLogin extends javax.swing.JFrame {
                 object.setVisible(true);
             }
             else{
-                JOptionPane.showMessageDialog(null, "Email or Password is Invalid");
+                JOptionPane.showMessageDialog(null, "Username or Password is Invalid");
             }
         }
         catch(HeadlessException | SQLException e){
