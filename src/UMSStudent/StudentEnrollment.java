@@ -398,12 +398,11 @@ public class StudentEnrollment extends javax.swing.JFrame {
           }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
           }
-
+          
           //DISPLAY
           if(checked)
           {
-            //JOptionPane.showMessageDialog(null, col);
-              System.out.println(col);
+            JOptionPane.showMessageDialog(null, col);
           }
           else {
               JOptionPane.showMessageDialog(null, "You Must Select any course");
