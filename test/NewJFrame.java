@@ -1033,28 +1033,29 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
-            stmt = conn.createStatement();
+//            stmt = conn.createStatement();
+//            String Name = name.getText();
+//            String FatherName = fatherName.getText();
+//            String Nic = nic.getText();
+//            String Email = email.getText();
+//            String Address = address.getText();
+//            String Phone = phone.getText();
+//            String AcademicYear = academicyear.getText();
+//            String StudentNumber = faculty.getText();
+//            String Faculty = faculty.getText();
+//            String Department = department.getText();
+//            String Degree_Programe = degree_programe.getText();
+//            
+//            String sql = "INSERT INTO student(name, fathername, nic, email, address, phone, academicyear, studentnumber, faculty, department) "
+//            + "VALUES('"+Name+"', '"+FatherName+"', '"+Nic+"', '"+Email+"', '"+Address+"', '"+Phone+"', '"+AcademicYear+"', '"+StudentNumber+"', '"+Faculty+"', '"+Department+"')";
+//            stmt.executeUpdate(sql);
+//            JOptionPane.showMessageDialog(null, "Data is Successfully Inserted");
+//            setVisible(false);
+//            ShowStudent object = new ShowStudent();
+//            object.setVisible(true);
             String Name = name.getText();
-            String FatherName = fatherName.getText();
-            String Nic = nic.getText();
-            String Email = email.getText();
-            String Address = address.getText();
-            String Phone = phone.getText();
-            String AcademicYear = academicyear.getText();
-            String StudentNumber = faculty.getText();
-            String Faculty = faculty.getText();
-            String Department = department.getText();
-            String Degree_Programe = degree_programe.getText();
-            
-            String sql = "INSERT INTO student(name, fathername, nic, email, address, phone, academicyear, studentnumber, faculty, department) "
-            + "VALUES('"+Name+"', '"+FatherName+"', '"+Nic+"', '"+Email+"', '"+Address+"', '"+Phone+"', '"+AcademicYear+"', '"+StudentNumber+"', '"+Faculty+"', '"+Department+"')";
-            stmt.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, "Data is Successfully Inserted");
-            setVisible(false);
-            ShowStudent object = new ShowStudent();
-            object.setVisible(true);
         }
-        catch(HeadlessException | SQLException e){
+        catch(HeadlessException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
